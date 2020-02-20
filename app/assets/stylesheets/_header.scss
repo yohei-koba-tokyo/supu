@@ -1,5 +1,36 @@
-head {
-  height: 80px;
+header {
+  box-shadow: 2px 2px 4px rgb(212, 151, 151);
+  position: fixed;
+  padding-top: 0;
+  height: 100px;
   width: 100%;
-  background-color: black;
+  background: linear-gradient(to right, white, rgb(248, 231, 231));
 }
+
+h1 {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 100px;
+  a.supulogo {
+    cursor: pointer;
+    display: block;
+    width: 200px;
+    height: 95px;
+    font-size: 0;
+    background: url(supulogo.png) left center/180px auto no-repeat;
+  }
+  .nav {
+    line-height: 115px;
+    a {
+      color: black;
+      .nav__menu {
+        font-weight: bold;
+        float: right;
+        font-size: medium;
+        line-height: 35px;
+        margin-left: 20px;
+      }
+    }
+  }
+}
+

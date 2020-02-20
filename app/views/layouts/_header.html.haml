@@ -1,2 +1,13 @@
 %header
- whatsup!!!
+  %h1
+    =link_to "/", class: "supulogo" do
+      supulogo
+    .nav
+      - if user_signed_in?
+        =link_to "#", class: "far fa-user fa-2x" do
+          .nav__menu
+            編集/ログアウト
+      - else
+        =link_to new_user_session_path, class: "far fa-user fa-2x" do
+          .nav__menu
+            新規登録/ログイン
