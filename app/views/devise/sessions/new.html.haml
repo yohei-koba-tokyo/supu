@@ -4,16 +4,15 @@
       %h2 ログイン
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         .field
-          = f.label :email
+          = f.label :Eメール
           = f.email_field :email, autofocus: true, autocomplete: "email", class:"user-input"
         .field
-          = f.label :password
+          = f.label :パスワード
           = f.password_field :password, autocomplete: "current-password", class:"user-input"
         - if devise_mapping.rememberable?
           .field
-            = f.label :remember_me
+            = f.label :パスワードを保存する
             = f.check_box :remember_me
-            
         .actions
-          = f.submit "Log in"
+          = f.submit "ログイン", class:"logbtn"
       = render "devise/shared/links"
