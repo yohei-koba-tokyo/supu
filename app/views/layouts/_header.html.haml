@@ -4,10 +4,13 @@
       supulogo
     .nav
       - if user_signed_in?
-        =link_to "#", class: "far fa-user fa-2x" do
+        =link_to "#", class: "fas fa-user-edit fa-lg" do
           .nav__menu
-            編集/ログアウト
+            = current_user.nickname
+        =link_to destroy_user_session_path, method: :DELETE, class: "fas fa-moon fa-lg" do
+          .nav__menu
+            ログアウト
       - else
-        =link_to new_user_session_path, class: "far fa-user fa-2x" do
+        =link_to new_user_session_path, class: "far fa-user fa-lg" do
           .nav__menu
             新規登録/ログイン

@@ -1,34 +1,38 @@
 header {
-  box-shadow: 2px 2px 4px rgb(212, 151, 151);
+  box-shadow: 1px 1px 3px rgb(201, 201, 201);
   position: fixed;
   padding-top: 0;
   height: 100px;
   width: 100%;
-  background: linear-gradient(to right, white, rgb(248, 231, 231));
+  background: linear-gradient(to right, white, rgb(255, 242, 242));
 }
 
 h1 {
   display: flex;
   justify-content: space-between;
-  padding: 0 100px;
+  padding: 0 60px;
   a.supulogo {
     cursor: pointer;
     display: block;
     width: 200px;
-    height: 95px;
+    height: 100px;
     font-size: 0;
     background: url(supulogo.png) left center/180px auto no-repeat;
   }
   .nav {
-    line-height: 115px;
+    
     a {
       color: black;
+      margin-left: 29px;
+      line-height: 100px;
+      font-size: 18px;
       .nav__menu {
         font-weight: bold;
         float: right;
-        font-size: medium;
-        line-height: 35px;
-        margin-left: 20px;
+        font-size: 14px;
+        margin-left: 8px;
+        position: relative;
+        top: 1px;
       }
     }
   }
