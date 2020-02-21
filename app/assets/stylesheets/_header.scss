@@ -1,10 +1,11 @@
 header {
+  z-index: 10;
   box-shadow: 1px 1px 3px rgb(201, 201, 201);
   position: fixed;
   padding-top: 0;
   height: 100px;
   width: 100%;
-  background: linear-gradient(to right, white, rgb(255, 242, 242));
+  background: linear-gradient(to right, white, rgb(255, 247, 247));
 }
 
 h1 {
