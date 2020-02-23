@@ -2,12 +2,12 @@
   background: url(main.png) no-repeat top center;
   background-size: auto 660px;
   width: 100%;
-  height: calc(100% - 50px);
+  height: calc(100% - 40px);
   &__inner {
     box-sizing: border-box;
-    padding-top: 110px;
+    padding-top: 80px;
     width: 100%;
-    height: calc(100% - 110px);
+    height: 100%;
     &--management {
       box-sizing: border-box;
       padding: 20px;
@@ -38,7 +38,7 @@
         line-height: 40px;
         font-size: small;
       }
-      .logbtn, a.logbtn {
+      .logbtn, a.logbtn, {
         font-weight: bold;
         cursor: pointer;
         margin: 15px 0;
@@ -52,4 +52,14 @@
       }
     }
   }
+}
+
+.user-input {
+  padding: 0 12px;
+  width: 250px;
+  line-height: 33px;
+  margin-bottom: 6px;
+  border-style: none;
+  border-radius: 20px;
+  box-shadow: inset 1px 1px 3px rgba(180, 180, 148, 0.644);    
 }

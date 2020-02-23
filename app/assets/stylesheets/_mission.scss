@@ -1,0 +1,51 @@
+.contents {
+  font-size: 12px;
+  box-sizing: border-box;
+  width: 390px;
+  height: 100%;
+  background-color: $syellow;
+  padding:5px;
+  overflow: scroll;
+  &__content {
+    box-sizing: border-box;
+    width: 380px;
+    padding: 5px;
+    display: flex;
+    border-bottom: 1px solid white;
+    .picture {
+      width: 100px;
+      height: 100px;
+      background-color: rgb(255, 255, 255);
+      position: relative;
+      border-radius: 20px;
+      p {
+        position: absolute;
+        font-weight: bold;
+        font-size: 15px;
+        background: linear-gradient(transparent 50%, #fffb0069 50%);
+      }
+      img {
+        box-sizing: border-box;
+        border-radius: 20px;
+        padding: 5px;
+      }
+    }
+    &__mission {
+      box-sizing: border-box;
+      padding: 5px;
+      width: 270px;
+      word-wrap:break-word;
+      p {
+        font-weight: bold;
+        font-size: 14px;
+      }
+      #id_date {
+        margin-right: 12px;
+      }
+      &--text {
+        width: 260px;
+      }
+    }
+  }
+
+}

@@ -1,0 +1,39 @@
+.topcover
+  .topcover__inner
+    .new-mission
+      .new-mission__title
+        新ミッションの作成
+        = form_for @mission do |f|
+          = f.text_field :name, class:"user-input user-input-title", placeholder: "ミッション名"
+          .new-mission__title__contents
+            .new-mission__title__contents--left
+              日時
+              = f.datetime_local_field :datetime, class:"user-input user-input-date"
+              %br
+              タイプ
+              = f.select :mission_type, [["友達",1], ["家族",2], ["仕事",3], ["パートナー",4], ["その他",5]], prompt: "タイプを選択してください", class:"user-input"
+              %br
+              メンバー
+
+            .new-mission__title__contents--right
+              = f.text_area :comment, class: "user-input user-input-comment", placeholder: "ミッション詳細"
+              = f.submit "登録", class:"logbtn-new"
+          -# .field
+          -#   = f.label :Eメール
+          -#   = f.email_field :email, autofocus: true, autocomplete: "email", class:"user-input"
+          -# .field
+          -#   = f.label :パスワード
+          -#   = f.password_field :password, autocomplete: "current-password", class:"user-input"
+          -# - if devise_mapping.rememberable?
+          -#   .field
+          -#     = f.label :パスワードを保存する
+          -#     = f.check_box :remember_me
+          -# .actions
+          -#   = f.submit "ログイン", class:"logbtn"
+
+          -# =form_for @group do |f|
+          -#   = f.text_field :name, class: "chat-group-form__input", placeholder: "グループ名を入力してください"
+          -#   = f.collection_check_boxes :user_ids, User.all, :id, :name
+          -#   = f.submit "Save", class: "chat-group-form__action-btn"
+
+        

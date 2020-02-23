@@ -1,12 +1,16 @@
 class MissionsController < ApplicationController
 
+  def index
+    @missions = Mission.all
+  end
+
   def new
-    @mission = Group.new
-    @mission.users << current_user
+    @missions = Mission.all
+    @mission = Mission.new
+    # @mission.users << current_user
   end
 
   def create
-    binding.pry
   end
 
 

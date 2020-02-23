@@ -1,0 +1,11 @@
+.contents__content
+  .picture
+    %p= 3
+    =image_tag "#{mission.mission_type}", size: "100x100"
+  .contents__content__mission
+    %p
+      %span#id_date
+        = mission.datetime.to_s(:date2)
+      = mission.name
+    .contents__content__mission--text
+      = mission.comment
