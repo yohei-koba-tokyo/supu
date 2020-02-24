@@ -40,12 +40,18 @@
         font-size: 14px;
       }
       #id_date {
-        margin-right: 12px;
+        margin-right: 0px;
       }
       &--text {
         width: 260px;
       }
     }
   }
-
+  &__content:hover {
+    background-color: white;
+    transition: background-color 0.3s;
+  }
+  a {
+    color: black;
+  }
 }
