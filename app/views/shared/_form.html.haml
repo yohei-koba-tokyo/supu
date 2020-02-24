@@ -1,0 +1,17 @@
+= form_for @mission do |f|
+  = f.text_field :name, class:"user-input user-input-title", placeholder: "ミッション名"
+  .new-mission__title__contents
+    .new-mission__title__contents--left
+      %b 日時
+      = f.datetime_local_field :datetime, class:"user-input user-input-date"
+      %br
+      %b タイプ
+      = f.select :mission_type, [["友達",1], ["家族",2], ["仕事",3], ["パートナー",4], ["その他",5]], prompt: "タイプを選択してください", class:"user-input"
+      .mission__member
+        %b メンバー
+        .mission__members
+          -# .mission__members__leader= "#{current_user.nickname} :リーダー"
+          = f.collection_check_boxes :user_ids, User.all, :id, :nickname       
+    .new-mission__title__contents--right
+      = f.text_area :comment, class: "user-input user-input-comment", placeholder: "ミッション詳細"
+      = f.submit "登録", class:"logbtn-new"

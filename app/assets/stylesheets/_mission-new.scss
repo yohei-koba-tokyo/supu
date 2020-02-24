@@ -59,3 +59,25 @@
     }
   }
 }
+.mission__member {
+  display: flex;
+  padding: 0 10px;
+}
+.mission__members {
+  width: 260px;
+  padding-top: 7px;
+  padding-left: 13px;
+  line-height: 30px;
+  text-align: left; 
+  &__leader {
+    color: black;
+  }
+  input#member-form {
+    line-height: 30px;
+    width: 250px;
+    padding-left: 13px;
+    border-style: none;
+    border-radius: 20px;
+    box-shadow: inset 1px 1px 3px rgba(180, 180, 148, 0.644);
+  }
+}

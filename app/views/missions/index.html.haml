@@ -3,4 +3,4 @@
     - if user_signed_in?
       .contents
         - @missions.each do |mission|
-          = render mission
+          = render partial: 'shared/missions', locals: {mission: mission }
