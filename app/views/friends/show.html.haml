@@ -1,0 +1,38 @@
+.topcover
+  .topcover__inner
+    - if user_signed_in?
+      .contents
+        %p.contents__title フレンド一覧
+        - current_user.friends.each do |friend|
+          = render partial: 'shared/friends', locals: {friend: friend }
+    .friend-data
+      .friend-data__left
+        .friend-data__left__top
+          -if @friend.memo.blank?
+          -else
+            %p.memo
+              = simple_format(@friend.memo)
+        .friend-data__left__footer
+          =link_to edit_friend_path(@friend), class: "edit-btn" do
+            .nav__menu__friend
+              編集
+      .friend-data__right
+        .friend-data__right__top
+          .friend-data__right__top__name
+            = @friend.name
+          .friend-data__right__top__sex
+            - if @friend.sex ==0
+              男性
+            - elsif @friend.sex ==1
+              女性
+            - else
+          .friend-data__right__top__birth
+            -if @friend.birth.blank?
+            -else
+              = "誕生日: #{@friend.birth.to_s(:date3)}"
+          .friend-data__right__top__missions
+            -# ミッション一覧
+        -if @friend.twitter.blank?
+        -else
+          %a.twitter-timeline{"data-chrome" => "nofooter", "data-height" => "350", "data-width" => "220", :href => "https://twitter.com/#{@friend.twitter}"}
+          %script{:async => "", :charset => "utf-8", :src => "//platform.twitter.com/widgets.js"}

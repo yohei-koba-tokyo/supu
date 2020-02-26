@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root 'missions#index'
   resources :users, only: [:index, :edit, :update]
   resources :missions
+  resources :friends
 end

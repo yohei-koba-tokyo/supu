@@ -1,7 +1,6 @@
 class MissionsController < ApplicationController
 
   def index
-    @missions = Mission.all.order("datetime ASC")
   end
 
   def new

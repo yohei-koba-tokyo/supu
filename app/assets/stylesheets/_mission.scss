@@ -50,8 +50,13 @@
   &__content:hover {
     background-color: white;
     transition: background-color 0.3s;
+    border-right: yellow 2px solid;
   }
   a {
     color: black;
   }
+}
+
+p.contents__title {
+  font-weight: bold;
 }

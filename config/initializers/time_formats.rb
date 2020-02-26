@@ -6,6 +6,7 @@ Time::DATE_FORMATS[:time] = '%H:%M:%S'
 Time::DATE_FORMATS[:MonTue] = '%Y/%_-m/%_-d/%_-a %_H:%M'
 Time::DATE_FORMATS[:default] = '%Y/%m/%d'
 Time::DATE_FORMATS[:date2] = '%_-m/%_-d%a'
+Date::DATE_FORMATS[:date3] = '%_-m/%_-d%a'
 Time::DATE_FORMATS[:aaaaa] = '%Y, %m, %d'
 
 

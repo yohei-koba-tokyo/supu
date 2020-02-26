@@ -1,0 +1,11 @@
+%label
+  = link_to friend_path(friend) do
+    .contents__content
+      .friend
+        .friend__name
+          = friend.name
+        .friend__birth
+          -if friend.birth.blank?
+            = ""
+          -else
+            = "誕生日 #{friend.birth.to_s(:date3)}"

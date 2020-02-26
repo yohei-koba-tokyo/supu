@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :mission_users
   has_many :missions, through: :mission_users
+  has_many :friends
 end

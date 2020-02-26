@@ -2,5 +2,6 @@
   .topcover__inner
     - if user_signed_in?
       .contents
+        %p.contents__title ミッション一覧
         - current_user.missions.each do |mission|
           = render partial: 'shared/missions', locals: {mission: mission }
