@@ -6,6 +6,12 @@ class MissionsController < ApplicationController
   def new
     @mission = Mission.new
     @mission.users << current_user
+    @friends = []
+    Friend.all.each do |friend|
+      if friend.user_id == current_user.id
+        @friends << friend
+      end
+    end
   end
 
   def create
@@ -33,7 +39,7 @@ class MissionsController < ApplicationController
 
   private
   def mission_params
-    params.require(:mission).permit(:datetime, :name, :comment, :mission_type, user_ids: [])
+    params.require(:mission).permit(:datetime, :name, :comment, :mission_type, :friend_id, user_ids: [])
   end
 
 end

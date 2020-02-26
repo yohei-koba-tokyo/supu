@@ -1,5 +1,7 @@
 = form_for @mission do |f|
   = f.text_field :name, class:"user-input user-input-title", placeholder: "ミッション名"
+  フレンド選択：
+  = f.collection_select :friend_id, @friends, :id, :name, class:"user-input"
   .new-mission__title__contents
     .new-mission__title__contents--left
       %b 日時
