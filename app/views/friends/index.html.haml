@@ -3,8 +3,8 @@
     - if user_signed_in?
       .contents
         .contents-menu
-          .contents-menu--
+          .contents-menu--display
             %p.contents__title フレンド一覧
-            =link_to "", new_friend_path, class:"fas fa-user-plus fa-lg"
+            =link_to "追加", new_friend_path, class:"fas fa-user-plus fa-lg friendadd"
         - current_user.friends.each do |friend|
-          = render partial: 'shared/friends', locals: {friend: friend }
+          = render partial: 'side-friends', locals: {friend: friend }

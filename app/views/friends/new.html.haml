@@ -2,9 +2,12 @@
   .topcover__inner
     - if user_signed_in?
       .contents
-        %p.contents__title フレンド一覧
+        .contents-menu
+          .contents-menu--display
+            %p.contents__title フレンド一覧
+            =link_to "追加", new_friend_path, class:"fas fa-user-plus fa-lg friendadd"
         - current_user.friends.each do |friend|
-          = render partial: 'shared/friends', locals: {friend: friend }
+          = render partial: 'side-friends', locals: {friend: friend }
     -# .friend-data
     -#   .friend-data__left
     -#     .friend-data__left__top
