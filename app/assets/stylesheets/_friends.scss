@@ -90,3 +90,71 @@
       }
     }
 }
+
+.friend-data__new {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  position: relative;
+  #friend_name, #friend_sex, #friend_birth, #friend_twitter, #friend_memo {
+    width: 150px;
+    padding-left: 13px;
+    border-style: none;
+    border-radius: 20px;
+    box-shadow: inset 1px 1px 3px rgba(180, 180, 148, 0.644);
+    font-size: 15px;
+  }
+  .birth {
+    line-height: 40px;
+  }
+  #friend_name, #friend_birth {
+    line-height: 30px;
+    width: 200px;
+  }
+  #friend_memo {
+    width: 90%;
+    height: 250px;
+  }
+  &__top {
+    height: 40px;
+    width: 100%;
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-around;
+  }
+  &__middle {
+    height: 40px;
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-around;
+  }
+  &__main {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+  }
+  &__footer {
+    width:calc(100% - 30px);
+    height: 80px;
+    position: absolute;
+    bottom: 0;
+    input {
+      background-color: white;
+      cursor: pointer;
+      border-radius :10px;
+      box-shadow: 2px 2px 4px rgba(180, 180, 148, 0.8);
+      width: 70px;
+      height: 40px;
+      font-weight: bold;
+    }
+    a {
+      color: red;
+      padding-left: 50px;
+      text-shadow: 1px 1px 1px rgb(161, 133, 133);
+    }
+  }
+}

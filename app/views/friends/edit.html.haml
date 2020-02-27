@@ -8,3 +8,20 @@
             =link_to "追加", new_friend_path, class:"fas fa-user-plus fa-lg friendadd"
         - current_user.friends.each do |friend|
           = render partial: 'side-friends', locals: {friend: friend }
+    .friend-data
+      .friend-data__new
+        = form_for @friend do |f|
+          %p.contents__title フレンド編集
+          .friend-data__new__top
+            %p.birth 名前:
+            = f.text_field :name, placeholder:"フレンドの名前"
+            = f.select :sex, [["男性",0], ["女性",1]], prompt: "性別は？"
+          .friend-data__new__middle  
+            %p.birth 誕生日:
+            = f.date_field :birth
+            = f.text_field :twitter, placeholder:"twitterのID"
+          .friend-data__new__main
+            = f.text_area :memo, placeholder: "フレンドは何が好き？最近どんなこと言ってた？メモしておこう！"
+          .friend-data__new__footer
+            = f.submit "登録"
+            = link_to "削除", friend_path, method: :delete
