@@ -67,3 +67,96 @@ a.friendadd {
   font-size: 20px;
   // color: rgb(104, 9, 9);
 }
+
+
+// ここから、チャットボックス
+.chatbox {
+  width: calc(100% - 390px);
+  min-width: 400px;
+  height: 100%;
+  box-sizing: border-box;
+  &__main {
+    box-sizing: border-box;
+    // height: calc(100vh - 211px);
+    height: calc(100% - 90px);
+    width: 100%;
+    overflow: scroll;
+    padding: 20px;
+    p.name {
+      padding-bottom:10px;
+      font-weight: bold;
+
+    }
+    .balloon{
+      position: relative;
+      min-width: 200px;
+      width: 80%;
+      min-height: 10px;
+      background-color: white;
+      padding: 10px;
+    }
+    /* beforeで三角を表現 */
+    .balloon::before{
+      content: '';
+      position: absolute;
+      left: 20px;
+      top: -10px;
+      display: block;
+      width: 0;
+      height: 0;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid white;
+      border-left: 10px solid transparent;
+    }
+    p.me {
+      text-align: right;
+      padding-bottom:10px;
+      padding-right: 10%;
+      font-weight: bold;
+    }
+    .balloonright {
+      position: relative;
+      min-width: 200px;
+      width: 80%;
+      min-height: 10px;
+      background-color: rgb(255, 225, 225);
+      padding: 10px;
+    }
+    /* beforeで三角を表現 */
+    .balloonright::before{
+      content: '';
+      position: absolute;
+      right: 20px;
+      top: -10px;
+      display: block;
+      width: 0;
+      height: 0;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid rgb(255, 225, 225);
+      border-left: 10px solid transparent;
+    }
+  }
+  &__form {
+    background-color: rgba(255, 255, 255, 0.753);
+    box-sizing: border-box;
+    height: 90px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+    &__editbtn {
+      background: linear-gradient(transparent 50%, #fffb0069 50%);
+      height: 30px;
+      width: 108px;
+      background-color: rgba(255, 255, 255, 0.753);
+      position: relative;
+      top:-50px;
+      border-radius: 10px 10px 0px 0px / 10px 10px 0px 0px;
+      font-size: 14px;
+      line-height: 30px;
+      a.mission-edit {
+        color: black;
+      }
+    }
+  }
+}

@@ -24,7 +24,9 @@ class MissionsController < ApplicationController
   end
 
   def edit
-    @group = Mission.find(params[:id])
+    @mission = Mission.find(params[:id])
+    @friends = []
+    @friends << Friend.find(@mission.friend_id)
   end
 
   def update
