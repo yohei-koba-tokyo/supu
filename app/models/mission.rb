@@ -4,4 +4,6 @@ class Mission < ApplicationRecord
   belongs_to :friend
   has_many :messages
   validates :name, :datetime, :friend_id, presence: true
+
+  default_scope -> { order(datetime: :asc) }
 end
