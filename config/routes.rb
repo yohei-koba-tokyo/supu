@@ -3,5 +3,7 @@ Rails.application.routes.draw do
   root 'missions#index'
   resources :users, only: [:index, :edit, :update]
   resources :friends
-  resources :missions
+  resources :missions do
+    resources :messages, only: [:create]
+  end
 end

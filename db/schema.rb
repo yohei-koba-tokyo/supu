@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_25_040750) do
+ActiveRecord::Schema.define(version: 2020_02_28_064855) do
 
   create_table "friends", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -22,6 +22,17 @@ ActiveRecord::Schema.define(version: 2020_02_25_040750) do
     t.datetime "updated_at", null: false
     t.string "name"
     t.index ["user_id"], name: "index_friends_on_user_id"
+  end
+
+  create_table "messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "content"
+    t.string "image"
+    t.bigint "mission_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["mission_id"], name: "index_messages_on_mission_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "mission_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -58,6 +69,8 @@ ActiveRecord::Schema.define(version: 2020_02_25_040750) do
   end
 
   add_foreign_key "friends", "users"
+  add_foreign_key "messages", "missions"
+  add_foreign_key "messages", "users"
   add_foreign_key "mission_users", "missions"
   add_foreign_key "mission_users", "users"
 end

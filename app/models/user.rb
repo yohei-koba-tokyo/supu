@@ -6,4 +6,5 @@ class User < ApplicationRecord
   has_many :mission_users
   has_many :missions, through: :mission_users
   has_many :friends
+  has_many :messages
 end

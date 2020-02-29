@@ -57,9 +57,34 @@
     color: black;
   }
 }
-p.contents__title {
-  font-weight: bold;
+.mission__now {
+  box-sizing: border-box;
+  width: 100%;
+  height: 250px;
+  background-color: rgb(255, 255, 255);
+  &__inner {
+    width: 100%;
+    height: 215px;
+    display: flex;
+    &__left {
+      width: 120px;
+      height: 215px;
+      text-align: center;
+      border-right: 1px rgb(212, 212, 212) dashed;
+    }
+    &__right {
+      box-sizing: border-box;
+      padding: 5px;
+      width: 258px;
+      height: 215px;
+    }
+  }
 }
+
+
+
+
+
 a.friendadd {
   position: relative;
   top: -22px;
@@ -77,15 +102,15 @@ a.friendadd {
   box-sizing: border-box;
   &__main {
     box-sizing: border-box;
+    background-color: rgba(112, 112, 112, 0.192);
     // height: calc(100vh - 211px);
     height: calc(100% - 90px);
     width: 100%;
     overflow: scroll;
     padding: 20px;
     p.name {
-      padding-bottom:10px;
-      font-weight: bold;
-
+      margin: 10px 0;
+      font-size: 13px;
     }
     .balloon{
       position: relative;
@@ -94,6 +119,8 @@ a.friendadd {
       min-height: 10px;
       background-color: white;
       padding: 10px;
+      border-radius: 15px;
+      box-shadow: 3px 3px 1px rgb(167, 166, 166);
     }
     /* beforeで三角を表現 */
     .balloon::before{
@@ -110,17 +137,19 @@ a.friendadd {
     }
     p.me {
       text-align: right;
-      padding-bottom:10px;
-      padding-right: 10%;
-      font-weight: bold;
+      padding-right: 16%;
+      margin: 10px 0;
+      font-size: 13px;
     }
     .balloonright {
       position: relative;
       min-width: 200px;
       width: 80%;
       min-height: 10px;
-      background-color: rgb(255, 225, 225);
+      background-color: rgb(255, 238, 238);
       padding: 10px;
+      border-radius: 15px;
+      box-shadow: 3px 3px 1px rgb(167, 166, 166);
     }
     /* beforeで三角を表現 */
     .balloonright::before{
@@ -132,7 +161,7 @@ a.friendadd {
       width: 0;
       height: 0;
       border-right: 10px solid transparent;
-      border-bottom: 10px solid rgb(255, 225, 225);
+      border-bottom: 10px solid rgb(255, 238, 238);
       border-left: 10px solid transparent;
     }
   }
@@ -144,10 +173,42 @@ a.friendadd {
     display: flex;
     justify-content: flex-end;
     padding: 20px;
+    input#message_image.hidden {
+      display: none;
+    }
+    form#new_message {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      input#message_content.form__message {
+        box-sizing: border-box;
+        padding: 0 10px;
+        border-style: none;
+        width: 100%;
+        box-shadow: inset 1px 1px 3px grey;
+      }
+      .form__mask {
+        margin-left: -40px;
+        margin-top: 13px;
+        i.fas {
+          cursor: pointer;
+        }
+      }
+      input.form__submit {
+        border-style: none;
+        background-color: white;
+        width: 90px;
+        height: 100%;
+        border-radius: 20px;
+        box-shadow: 1px 1px 3px grey;
+        margin-right: -100px;
+        cursor: pointer;
+      }
+    }
     &__editbtn {
       background: linear-gradient(transparent 50%, #fffb0069 50%);
       height: 30px;
-      width: 108px;
+      width: 117px;
       background-color: rgba(255, 255, 255, 0.753);
       position: relative;
       top:-50px;

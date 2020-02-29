@@ -2,26 +2,40 @@
   .topcover__inner
     - if user_signed_in?
       .contents
-        %p.contents__title ミッション一覧
+        .mission__now
+          %p.contents__title
+            = @mission.datetime.to_s(:date3)
+            = "#{@mission.name}"
+          .mission__now__inner
+            .mission__now__inner__left
+              < メンバー >
+              - @mission.users.each do |u|
+                %p
+                  ="#{u.nickname}"
+            .mission__now__inner__right
+              フレンド：
+              = @mission.friend.name
+              %br
+              %br
+              内容：
+              %br
+              = simple_format(@mission.comment)
+
+        %p.contents__title 他ミッション一覧
         - current_user.missions.each do |mission|
           = render partial: 'shared/missions', locals: {mission: mission }
     .chatbox
       .chatbox__main
-
-        %p.name こばやし 3/4 Wed 12:00
-        .balloon
-          こんにちは
-        %p.me たむら 3/4 13:00
-        .balloonright
-          はろーはろー
-        %p.name こばやし 3/4 Wed 12:00
-        .balloon
-          こんにちは
-        %p.me たむら 3/4 13:00
-        .balloonright
-          はろーはろー
-
-
+        =render @messages
       .chatbox__form
+        = form_for [@mission, @message], method: :post, url: mission_messages_path(@mission) do |f|
+          =f.text_field :content, class: 'form__message', placeholder: 'メッセー時を入力'
+          .form__mask
+            = f.label :image, class: 'form__mask__image' do
+              = icon('fas', 'image', class: 'icon')
+              = f.file_field :image, class: 'hidden'
+          = f.submit 'Send', class: 'form__submit'          
+
+
         .chatbox__form__editbtn
           =link_to  " ミッション編集", edit_mission_path, class:"mission-edit"

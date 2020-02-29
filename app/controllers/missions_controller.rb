@@ -3,6 +3,12 @@ class MissionsController < ApplicationController
   def index
   end
 
+  def show
+    @mission = Mission.find(params[:id])
+    @messages = @mission.messages.includes(:user)
+    @message = Message.new
+  end
+
   def new
     @mission = Mission.new
     @mission.users << current_user
@@ -32,7 +38,7 @@ class MissionsController < ApplicationController
   def update
     @mission = Mission.find(params[:id])
     if @mission.update(mission_params)
-      redirect_to root_path, notice: 'グループを更新しました'
+      redirect_to mission_path(params[:id]), notice: 'グループを更新しました'
     else
       render :edit
     end

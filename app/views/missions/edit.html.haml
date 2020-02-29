@@ -19,4 +19,4 @@
                   = f.collection_check_boxes :user_ids, User.all, :id, :nickname, include_hidden: false  
             .new-mission__title__contents--right
               = f.text_area :comment, class: "user-input user-input-comment", placeholder: "ミッション詳細"
-              = f.submit "登録", class:"logbtn-new"
+              = f.submit "更新", class:"logbtn-new"

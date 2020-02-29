@@ -1,0 +1,17 @@
+- if current_user.id == message.user_id
+  %p.me 
+    = message.user.nickname 
+    = message.created_at.to_s(:time2)
+  .balloonright
+    -if message.content.present?
+      = simple_format(message.content)
+    =image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+-else
+  %p.name
+    = message.user.nickname 
+    = message.created_at.to_s(:time2)
+  .balloon
+    -if message.content.present?
+      = simple_format(message.content)
+    =image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+
