@@ -12,6 +12,7 @@ class MissionsController < ApplicationController
   def new
     @mission = Mission.new
     @mission.users << current_user
+    @mission.friend_id = params[:friend_id]
     @friends = []
     Friend.all.each do |friend|
       if friend.user_id == current_user.id
