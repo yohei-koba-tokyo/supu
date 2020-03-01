@@ -1,10 +1,18 @@
 class MessagesController < ApplicationController
 
-
   def create
-    @message = Message.create(message_params)
     mission = Mission.find(params[:mission_id])
-    redirect_to mission_path(mission)
+    @message = Message.create(message_params)
+    if @message.save 
+      respond_to do |format|
+        format.html { redirect_to mission_path(mission) }
+        format.json 
+      end
+    else
+      @messages = @mission.messages.includes(:user)
+      flash.now[:alert] = 'メッセージを入力してください。'
+      render mission_path(mission)
+    end
   end
 
   def message_params

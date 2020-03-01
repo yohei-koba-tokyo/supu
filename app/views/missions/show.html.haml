@@ -27,6 +27,7 @@
     .chatbox
       .chatbox__main
         =render @messages
+        #anchor - 以下未読 -
       .chatbox__form
         = form_for [@mission, @message], method: :post, url: mission_messages_path(@mission) do |f|
           =f.text_field :content, class: 'form__message', placeholder: 'メッセー時を入力'
@@ -35,7 +36,5 @@
               = icon('fas', 'image', class: 'icon')
               = f.file_field :image, class: 'hidden'
           = f.submit 'Send', class: 'form__submit'          
-
-
         .chatbox__form__editbtn
           =link_to  " ミッション編集", edit_mission_path, class:"mission-edit"

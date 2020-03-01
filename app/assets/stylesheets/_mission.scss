@@ -22,8 +22,8 @@
       p {
         position: absolute;
         font-weight: bold;
-        font-size: 15px;
-        background: linear-gradient(transparent 50%, #fffb0069 50%);
+        font-size: 13px;
+        background: linear-gradient(transparent 50%, #fffb00c5 50%);
       }
       img {
         box-sizing: border-box;
@@ -211,4 +211,10 @@ a.friendadd {
       }
     }
   }
+}
+
+#anchor {
+  font-size: 13px;
+  text-align: center;
+  line-height: 50px;
 }

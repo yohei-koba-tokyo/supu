@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :edit, :update]
   resources :friends
   resources :missions do
-    resources :messages, only: [:create]
+    resources :messages, only: [:index, :create]
   end
 end

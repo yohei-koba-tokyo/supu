@@ -7,6 +7,7 @@ class MissionsController < ApplicationController
     @mission = Mission.find(params[:id])
     @messages = @mission.messages.includes(:user)
     @message = Message.new
+    gon.current_id = current_user.id
   end
 
   def new
