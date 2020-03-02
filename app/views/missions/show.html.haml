@@ -27,7 +27,7 @@
     .chatbox
       .chatbox__main
         =render @messages
-        #anchor - 以下未読 -
+        #anchor - 以下最新 -
       .chatbox__form
         = form_for [@mission, @message], method: :post, url: mission_messages_path(@mission) do |f|
           =f.text_field :content, class: 'form__message', placeholder: 'メッセー時を入力'

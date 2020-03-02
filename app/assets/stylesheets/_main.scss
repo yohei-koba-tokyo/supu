@@ -69,5 +69,36 @@
   margin-bottom: 6px;
   border-style: none;
   border-radius: 20px;
-  box-shadow: inset 1px 1px 3px rgba(180, 180, 148, 0.644);    
+  box-shadow: inset 1px 1px 3px rgba(180, 180, 148, 0.644);   
+}
+.contents__guidetop {
+  position: relative;
+  font-weight: bold;
+  text-align: center;
+  top: 130px;
+  left: 100px;
+  width: 520px;
+  height: 70px;
+  font-size: 25px;
+  span {
+    color: red;
+    margin: -9px;
+  }
+
+}
+.contents__guidebottom {
+  position: absolute;
+  top:290px;
+  left: 100px;
+  #slide {
+    width:520px;
+    height:280px;
+    margin:0 auto;
+    position:relative;
+    }
+    #slide img {
+    position:absolute;
+    left:0;
+    top:0;
+    }
 }

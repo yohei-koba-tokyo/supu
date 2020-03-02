@@ -5,3 +5,20 @@
         %p.contents__title ミッション一覧
         - current_user.missions.each do |mission|
           = render partial: 'shared/missions', locals: {mission: mission }
+    - else
+      .contents__guidetop
+        sup
+        %span u
+        は、身近にいるあの人に
+        %br
+        サプライズを送るためのアプリです
+      .contents__guidebottom
+        #slide
+          %ul
+            %li
+              %img{:alt => "", :height => "280", :src => "assets/aaaa.jpg", :width => "520"}/
+            %li
+              %img{:alt => "", :height => "280", :src => "assets/bbbb.jpg", :width => "520"}/
+            %li
+              %img{:alt => "", :height => "280", :src => "assets/cccc.jpg", :width => "520"}/
+

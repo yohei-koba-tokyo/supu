@@ -25,7 +25,7 @@ class FriendsController < ApplicationController
 
     friend =Friend.find(params[:id])
     friend.update(friend_params)
-    redirect_to friends_path
+    redirect_to friend_path
   end
 
 

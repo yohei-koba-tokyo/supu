@@ -7,9 +7,12 @@
         =link_to friends_path, class: "fas fa-user-friends" do 
           .nav__menu
             = "フレンド一覧"
+        =link_to missions_path, class: "fas fa-tasks fa-lg" do
+          .nav__menu
+            = "ミッション一覧"
         =link_to new_mission_path, class: "fas fa-gift fa-lg" do
           .nav__menu
-            = "新ミッション"
+            = "新ミッション　|"
         =link_to edit_user_registration_path, class: "fas fa-user-edit fa-lg" do
           .nav__menu
             = current_user.nickname
