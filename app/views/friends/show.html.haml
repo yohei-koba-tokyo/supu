@@ -37,7 +37,9 @@
             -else
               = "誕生日: #{@friend.birth.to_s(:date3)}"
           .friend-data__right__top__missions
-            -# ミッション一覧
+            - @friend.missions.each do |mission|
+              = link_to "#{mission.name}", mission_path(mission), class:"small"
+              = " | "
         -if @friend.twitter.blank?
         -else
           %a.twitter-timeline{"data-chrome" => "nofooter", "data-height" => "350", "data-width" => "220", :href => "https://twitter.com/#{@friend.twitter}"}
