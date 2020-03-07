@@ -75,11 +75,12 @@
   position: relative;
   font-weight: bold;
   text-align: center;
-  top: 130px;
+  top: 120px;
   left: 100px;
   width: 520px;
   height: 70px;
-  font-size: 25px;
+  font-size: 27px;
+  text-shadow: 0 0 10px rgb(246, 255, 162);
   span {
     color: red;
     margin: -9px;
@@ -90,6 +91,7 @@
   position: absolute;
   top:290px;
   left: 100px;
+  box-shadow: 0 0 10px rgb(255, 255, 255);
   #slide {
     width:520px;
     height:280px;
