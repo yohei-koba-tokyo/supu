@@ -30,7 +30,7 @@
         #anchor - 以下最新 -
       .chatbox__form
         = form_for [@mission, @message], method: :post, url: mission_messages_path(@mission) do |f|
-          =f.text_field :content, class: 'form__message', placeholder: 'メッセー時を入力'
+          =f.text_field :content, class: 'form__message', placeholder: 'メッセージを入力'
           .form__mask
             = f.label :image, class: 'form__mask__image' do
               = icon('fas', 'image', class: 'icon')
