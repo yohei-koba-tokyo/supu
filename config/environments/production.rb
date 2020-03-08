@@ -93,7 +93,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   #deviseが認証用のURLなどを生成するのに必要になる（らしい）
-  config.action_mailer.default_url_options = { :host => 'herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'surprizegiftmaker.herokuapp.com' }
   #送信方法を指定（この他に:sendmail/:file/:testなどがあります)
   config.action_mailer.delivery_method = :smtp
   #送信方法として:smtpを指定した場合は、このconfigを使って送信詳細の設定を行います
