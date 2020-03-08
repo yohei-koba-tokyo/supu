@@ -15,4 +15,7 @@
             = f.check_box :remember_me
         .actions
           = f.submit "ログイン", class:"logbtn"
+      = link_to "※パスワードをお忘れの方は<コチラ>", new_user_password_path
+      %br
       = render "devise/shared/links"
+
