@@ -42,3 +42,4 @@
             .new-mission__title__contents--right
               = f.text_area :comment, class: "user-input user-input-comment", placeholder: "ミッション詳細"
               = f.submit "更新", class:"logbtn-new"
+              = link_to "閉じる", missions_path, class:"close-btn"
