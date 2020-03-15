@@ -5,7 +5,7 @@ header {
   padding-top: 0;
   height: 80px;
   width: 100%;
-  min-width: 958px;
+  min-width: 885px;
   background: linear-gradient(to right, white, rgb(243, 255, 242));
 }
 
@@ -27,11 +27,11 @@ h1 {
       color: black;
       margin-left: 27px;
       line-height: 80px;
-      font-size: 15px;
+      font-size: 12px;
       .nav__menu {
         font-weight: bold;
         float: right;
-        font-size: 14px;
+        font-size: 13px;
         margin-left: 3px;
         position: relative;
         top: 0px;
@@ -43,4 +43,6 @@ h1 {
     }
   }
 }
+
+
 

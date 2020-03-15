@@ -16,12 +16,9 @@
             %p.memo
               = simple_format(@friend.memo)
         .friend-data__left__footer
-          =link_to edit_friend_path(@friend), class: "edit-btn" do
-            .nav__menu__friend
-              編集
-          =link_to new_mission_path(:friend_id => @friend.id), class: "edit-btn" do
-            .nav__menu__friend
-              ミッション作成
+          =link_to "編集", edit_friend_path(@friend), class: "nav__menu__friend"
+          =link_to "ミッション作成", new_mission_path(:friend_id => @friend.id), class: "nav__menu__friend"
+          =link_to "閉じる", friends_path, class:"close-btn"
       .friend-data__right
         .friend-data__right__top
           .friend-data__right__top__name

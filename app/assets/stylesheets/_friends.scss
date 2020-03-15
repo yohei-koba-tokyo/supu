@@ -9,9 +9,12 @@
   }
   &__birth {
     line-height: 15px;
-    font-size: 13px;
+    font-size: 11px;
     padding-top:14px;
-    padding-right: 20px;
+    padding-right: 15px;
+    .fas.fa-birthday-cake {
+      color: rgba(248, 101, 101, 0.877);
+    }
   }
 }
 
@@ -44,15 +47,17 @@
         position: absolute;
         bottom: 0;
         width: 100%;
-        height: 100px;
+        height: 130px;
         display: flex;
         justify-content: center;
         .nav__menu__friend {
+          height: 50px;
           font-weight: bold;
           text-align: center;
+          font-size: 16px;
           min-width: 80px;
           padding: 0 5px;
-          margin: 0 10px;
+          margin: auto 10px;
           line-height: 50px;
           box-shadow: 1px 1px 2px rgb(158, 153, 153);
           color: rgb(155, 7, 7);

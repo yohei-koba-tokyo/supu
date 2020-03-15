@@ -1,29 +1,29 @@
 .topcover
   .topcover__inner
     - if user_signed_in?
-      .contents
+      .contents__now
         .mission__now
           %p.contents__title
             = @mission.datetime.to_s(:date3)
             = "#{@mission.name}"
           .mission__now__inner
             .mission__now__inner__left
-              < メンバー >
+              <メンバー>
               - @mission.users.each do |u|
                 %p
                   ="#{u.nickname}"
             .mission__now__inner__right
-              フレンド：
+              フレンド:
               = @mission.friend.name
               %br
               %br
-              内容：
+              内容:
               %br
               = simple_format(@mission.comment)
-
         %p.contents__title 他ミッション一覧
-        - current_user.missions.each do |mission|
-          = render partial: 'shared/missions', locals: {mission: mission }
+        .mission-wrap
+          - current_user.missions.each do |mission|
+            = render partial: 'shared/missions', locals: {mission: mission }
     .chatbox
       .chatbox__main
         =render @messages

@@ -6,9 +6,10 @@
   height: 100%;
   background-color: $syellow;
   padding:5px;
-  overflow: scroll;
+  overflow-y: scroll;
   &__content {
     box-sizing: border-box;
+    color: black;
     width: 380px;
     padding: 5px;
     display: flex;
@@ -24,6 +25,12 @@
         font-weight: bold;
         font-size: 13px;
         background: linear-gradient(transparent 50%, #fffb00c5 50%);
+      }
+      p.past {
+        position: absolute;
+        font-weight: bold;
+        font-size: 13px;
+        background: linear-gradient(transparent 50%, #ff2d2d91 50%);
       }
       img {
         box-sizing: border-box;
@@ -86,6 +93,22 @@ a.friendadd {
   left: 300px;
   font-size: 20px;
 }
+
+.contents__now {
+  // z-index: 1;
+  font-size: 12px;
+  box-sizing: border-box; 
+  width: 390px;
+  height: 100%;
+  background-color: $syellow;
+  padding:5px;
+}
+.mission-wrap {
+  width: 100%;
+  height: calc(100% - 280px);
+  overflow-y: scroll;
+}
+
 // ここから、チャットボックス
 .chatbox {
   width: calc(100% - 390px);
@@ -97,7 +120,7 @@ a.friendadd {
     background-color: rgba(112, 112, 112, 0.315);
     height: calc(100% - 90px);
     width: 100%;
-    overflow: scroll;
+    overflow-y: scroll;
     padding: 20px;
     p.name {
       margin: 10px 0;
@@ -199,7 +222,7 @@ a.friendadd {
     &__editbtn {
       background: linear-gradient(transparent 50%, #fffb0069 50%);
       height: 30px;
-      width: 117px;
+      width: 119px;
       background-color: rgba(255, 255, 255, 0.753);
       position: relative;
       top:-50px;

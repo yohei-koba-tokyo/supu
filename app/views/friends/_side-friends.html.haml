@@ -8,4 +8,5 @@
           -if friend.birth.blank?
             = ""
           -else
-            = "誕生日 #{friend.birth.to_s(:date3)}"
+            %i.fas.fa-birthday-cake
+            = friend.birth.to_s(:date3)

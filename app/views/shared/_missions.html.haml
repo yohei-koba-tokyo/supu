@@ -2,7 +2,10 @@
   = link_to mission_path(mission, :anchor => 'anchor') do
     .contents__content
       .picture
-        %p= mission.datetime.to_s(:date3)
+        -if mission.datetime > Date.today
+          %p= mission.datetime.to_s(:date3)
+        -else
+          %p.past= mission.datetime.to_s(:date3)
         =image_tag "#{mission.mission_type}", size: "100x100"
       .contents__content__mission
         %p
