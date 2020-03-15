@@ -4,11 +4,12 @@
       .new-mission__title
         新ミッションの作成
         = form_for @mission do |f|
-          = f.text_field :name, class:"user-input user-input-title", placeholder: "ミッション名"
-          = f.collection_select :friend_id, @friends, :id, :name, class:"user-input", prompt: "フレンド選択"
+          .new-mission__title__top
+            = f.text_field :name, class:"user-input user-input-title", placeholder: "ミッション名"
+            = f.collection_select :friend_id, @friends, :id, :name, class:"user-input", prompt: "フレンド選択"
           .new-mission__title__contents
             .new-mission__title__contents--left
-              %b 日時
+              %b 日程
               = f.date_field :datetime, class:"user-input user-input-date"
               %br
               %b タイプ
@@ -43,3 +44,4 @@
               = f.text_area :comment, class: "user-input user-input-comment", placeholder: "ミッション詳細"
               = f.submit "登録", class:"logbtn-new"
               = link_to "閉じる", missions_path, class:"close-btn"
+              = render 'layouts/error_messages', model: f.object

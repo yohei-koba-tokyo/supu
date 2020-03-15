@@ -22,6 +22,7 @@
             = f.text_field :twitter, placeholder:"twitterのID"
           .friend-data__new__main
             = f.text_area :memo, placeholder: "フレンドは何が好き？最近どんなこと言ってた？メモしておこう！"
+          = render 'layouts/error_messages', model: f.object
           .friend-data__new__footer
             = f.submit "更新"
             = link_to "削除", friend_path, method: :delete

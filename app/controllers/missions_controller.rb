@@ -27,6 +27,12 @@ class MissionsController < ApplicationController
     if @mission.save
       redirect_to root_path, notice: 'グループを作成しました'
     else
+      @friends = []
+      Friend.all.each do |friend|
+        if friend.user_id == current_user.id
+          @friends << friend
+        end
+      end
       render :new
     end
   end
@@ -42,6 +48,8 @@ class MissionsController < ApplicationController
     if @mission.update(mission_params)
       redirect_to mission_path(params[:id]), notice: 'グループを更新しました'
     else
+      @friends = []
+      @friends << Friend.find(@mission.friend_id)
       render :edit
     end
   end
