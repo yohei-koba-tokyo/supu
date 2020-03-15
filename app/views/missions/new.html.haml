@@ -9,7 +9,7 @@
             = f.collection_select :friend_id, @friends, :id, :name, class:"user-input", prompt: "フレンド選択"
           .new-mission__title__contents
             .new-mission__title__contents--left
-              %b 日時
+              %b 日程
               = f.date_field :datetime, class:"user-input user-input-date"
               %br
               %b タイプ
