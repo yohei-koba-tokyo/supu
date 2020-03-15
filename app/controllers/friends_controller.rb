@@ -9,8 +9,12 @@ class FriendsController < ApplicationController
   end
 
   def create
-    Friend.create(friend_params)
-    redirect_to friends_path
+    @friend = Friend.new(friend_params)
+    if @friend.save
+      redirect_to friends_path
+    else
+      render 'new'
+    end
   end
 
   def show
@@ -22,10 +26,12 @@ class FriendsController < ApplicationController
   end
 
   def update
-
-    friend =Friend.find(params[:id])
-    friend.update(friend_params)
-    redirect_to friend_path
+    @friend =Friend.find(params[:id])
+    if @friend.update(friend_params)
+      redirect_to friend_path
+    else
+      render :edit
+    end
   end
 
 

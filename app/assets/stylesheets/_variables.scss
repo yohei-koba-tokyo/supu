@@ -7,3 +7,11 @@ p.contents__title {
   text-align: center;
   background: linear-gradient(transparent 50%, #fffb0069 50%);
 }
+
+.alert.alert-warning {
+  background-color: white;
+  border: red 1px solid;
+  border-radius: 5px;
+  margin: 10px;
+  font-size: 12px;
+}

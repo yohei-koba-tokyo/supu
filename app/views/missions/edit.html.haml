@@ -4,6 +4,7 @@
       .new-mission__title
         ミッション編集
         = form_for @mission do |f|
+
           = f.text_field :name, class:"user-input user-input-title", placeholder: "ミッション名"
           = f.collection_select :friend_id, @friends, :id, :name, class:"user-input", prompt: "フレンド選択"
           .new-mission__title__contents
@@ -43,3 +44,4 @@
               = f.text_area :comment, class: "user-input user-input-comment", placeholder: "ミッション詳細"
               = f.submit "更新", class:"logbtn-new"
               = link_to "閉じる", missions_path, class:"close-btn"
+              = render 'layouts/error_messages', model: f.object

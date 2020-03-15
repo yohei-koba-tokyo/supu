@@ -12,6 +12,10 @@
     margin-top: 20px;
     line-height: 40px;
     text-align: center;
+    &__top {
+      display: flex;
+      justify-content: center;
+    }
     .user-input-title {
       margin-right: 30px;
       width: 285px;
