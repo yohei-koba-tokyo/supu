@@ -196,13 +196,13 @@ a.friendadd {
       justify-content: space-between;
       input#message_content.form__message {
         box-sizing: border-box;
-        padding: 0 10px;
+        padding: 0 30px;
         border-style: none;
         width: 100%;
         box-shadow: inset 1px 1px 3px grey;
       }
       .form__mask {
-        margin-left: -40px;
+        margin-left: -50px;
         margin-top: 13px;
         i.fas {
           cursor: pointer;
@@ -222,13 +222,15 @@ a.friendadd {
     &__editbtn {
       background: linear-gradient(transparent 50%, #fffb0069 50%);
       height: 30px;
-      width: 119px;
-      background-color: rgba(255, 255, 255, 0.753);
+      width: 115px;
+      background-color: rgba(255, 255, 255, 0.795);
       position: relative;
       top:-50px;
+      right: 20px;
       border-radius: 10px 10px 0px 0px / 10px 10px 0px 0px;
-      font-size: 14px;
+      font-size: 11px;
       line-height: 30px;
+      text-align: center;
       a.mission-edit {
         color: black;
       }
