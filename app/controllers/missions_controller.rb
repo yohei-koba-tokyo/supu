@@ -1,6 +1,12 @@
 class MissionsController < ApplicationController
 
   def index
+    @thismonth = Date.today.month
+    @nextmonth = Date.today.prev_month(-1).month
+    @nextnextmonth = Date.today.prev_month(-2).month
+    @friends_thismonth = Friend.select { |friend| friend.birth.present? && friend.birth.month == @thismonth }
+    @friends_nextmonth = Friend.select { |friend| friend.birth.present? && friend.birth.month == @nextmonth }
+    @friends_nextnextmonth = Friend.select { |friend| friend.birth.present? && friend.birth.month == @nextnextmonth }
   end
 
   def show

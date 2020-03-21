@@ -5,6 +5,11 @@
         %p.contents__title ミッション一覧
         - current_user.missions.each do |mission|
           = render partial: 'shared/missions', locals: {mission: mission }
+      -if @friends_thismonth.present? || @friends_nextmonth.present? || @friends_nextnextmonth.present?
+        .news
+          = render partial: "month", locals: {month: @thismonth, friends: @friends_thismonth } 
+          = render partial: "month", locals: {month: @nextmonth, friends: @friends_nextmonth } 
+          = render partial: "month", locals: {month: @nextnextmonth, friends: @friends_nextnextmonth } 
     - else
       .contents__guidetop
         sup

@@ -1,0 +1,11 @@
+.news__top
+  = "#{month}月誕生日のフレンド"
+.news__main
+  -if friends.present?
+    - friends.each do |friend|
+      = friend.birth.to_s(:date3)
+      = link_to "#{friend.name}", friend_path(friend), class:"must_give"
+      %br
+  -else
+    .none
+      = "- #{month}月が誕生日のフレンドはいません -"
