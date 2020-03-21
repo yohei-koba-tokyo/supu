@@ -32,7 +32,7 @@
           .friend-data__right__top__birth
             -if @friend.birth.blank?
             -else
-              = "誕生日: #{@friend.birth.to_s(:date3)}"
+              = "誕生日: #{I18n.l(@friend.birth)}"
           .friend-data__right__top__missions
             - @friend.missions.each do |mission|
               = link_to "#{mission.name}", mission_path(mission), class:"small"

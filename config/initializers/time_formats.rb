@@ -8,6 +8,6 @@ Time::DATE_FORMATS[:default] = '%Y/%m/%d'
 Time::DATE_FORMATS[:date2] = '%_-m/%_-d%a'
 Time::DATE_FORMATS[:aaaaa] = '%Y, %m, %d'
 Time::DATE_FORMATS[:time2] = '%_-m/%_-d%a %H:%M'
-Date::DATE_FORMATS[:date3] = '%_-m/%_-d%a'
+Date::DATE_FORMATS[:date3] = '%_-m/%_-d(%a)'
 
 

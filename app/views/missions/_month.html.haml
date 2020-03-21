@@ -3,7 +3,7 @@
 .news__main
   -if friends.present?
     - friends.each do |friend|
-      = friend.birth.to_s(:date3)
+      = I18n.l(friend.birth)
       = link_to "#{friend.name}", friend_path(friend), class:"must_give"
       %br
   -else

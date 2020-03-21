@@ -7,6 +7,7 @@
           = render partial: 'shared/missions', locals: {mission: mission }
       -if @friends_thismonth.present? || @friends_nextmonth.present? || @friends_nextnextmonth.present?
         .news
+          %em もうすぐ誕生日のフレンドがいます！
           = render partial: "month", locals: {month: @thismonth, friends: @friends_thismonth } 
           = render partial: "month", locals: {month: @nextmonth, friends: @friends_nextmonth } 
           = render partial: "month", locals: {month: @nextnextmonth, friends: @friends_nextnextmonth } 
