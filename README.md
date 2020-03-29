@@ -62,7 +62,7 @@ Surprize Gift Maker "supu"  http://surprizegiftmaker.herokuapp.com/
 
 ![friend mov](https://user-images.githubusercontent.com/60637308/77840459-c28f8080-71c2-11ea-80bc-54fa613677a7.gif)
 
-#### ３．フレンド詳細画面より、"ミッション作成"ボタンより、新規のサプライズミッションを企画/作成出来ます。
+#### ３．フレンド詳細画面の"ミッション作成"ボタンから、新規のサプライズミッションを企画/作成出来ます。
 
 　　ミッション作成時には、他のユーザーを検索してミッション共有することが出来ます！
 
