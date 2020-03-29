@@ -34,19 +34,36 @@ This web application is aimed at providing pleasure to many loved ones.
 
 ## Demo & Usage
 
-> ログイン デモ用ユーザーアカウント
+![supufind mov](https://user-images.githubusercontent.com/60637308/77828899-98f23d00-7161-11ea-99a7-711ba45a536a.gif)
+
+ログイン デモ用ユーザーアカウント
 >
-> ユーザー名：SUPU
+> ユーザー名： SUPU
 >
-> メールアドレス：test@supu.com
+> メールアドレス： test@supu.com
 >
-> パスワード：abcdefg
+> パスワード： abcdefg
+> 
+>
+>
+サプライズミッションへの招待者検索 デモ用ユーザー
+> 
+> legro
+> 
+> 洋平
+> 
+> 直子
 
 
 
 １．まずは、ギフトサプライズを企画したい相手を、"フレンド"に登録しておきます。
 
 　　"追加ボタン"より、新規フレンドを追加することが出来ます。
+
+
+<img width="922" alt="bd9d6440a3b7761a39becdac9705cd4f" src="https://user-images.githubusercontent.com/60637308/77840292-b1de0b00-71c0-11ea-9b2b-1a53b7dfa57b.png">
+
+
 
 ２．登録をしたら、その人の誕生日や食べ物のの好み等、ギフト選びの参考になる情報を登録することが出来ます。
 
@@ -58,7 +75,7 @@ This web application is aimed at providing pleasure to many loved ones.
 
 ４．ミッション作成画面では、日付
 
-![supufind mov](https://user-images.githubusercontent.com/60637308/77828899-98f23d00-7161-11ea-99a7-711ba45a536a.gif)
+
 
 
 
