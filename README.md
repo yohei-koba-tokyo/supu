@@ -1,13 +1,6 @@
 ![supulogo1](https://user-images.githubusercontent.com/60637308/77823443-9af6d480-713e-11ea-93db-0fd2a023dee8.png)
 
-
-<div style="text-align: center;">
-Surprize Gift Maker "supu"
-</div>
-<div style="text-align: center;">
-http://surprizegiftmaker.herokuapp.com/
-</div>
-
+Surprize Gift Maker "supu"  http://surprizegiftmaker.herokuapp.com/
 ====
 
 　
@@ -15,7 +8,7 @@ http://surprizegiftmaker.herokuapp.com/
 
 #### This web application is aimed at providing pleasure to many loved ones.
 
-#### あなたの大事な人へ、心のこもったギフトサプライズを企画する為のWebアプリケーションです。
+#### 大事な人へ、心のこもったギフトサプライズを企画する為のWebアプリケーションです。
 
 　　
 
