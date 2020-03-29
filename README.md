@@ -64,7 +64,11 @@ This web application is aimed at providing pleasure to many loved ones.
 
 　　忘れずにメモしておくと、より喜んでもらえるギフト選びが出来ると思います！
 
-３．フレンド詳細画面より、"ミッション（サプライズ作成）"ボタンより、新規ミッションを企画作成出来ます。
+![friend mov](https://user-images.githubusercontent.com/60637308/77840459-c28f8080-71c2-11ea-80bc-54fa613677a7.gif)
+
+３．フレンド詳細画面より、"ミッション作成"ボタンより、新規のサプライズミッションを企画/作成出来ます。
+
+
 
 ４．ミッション作成画面では、日付
 
