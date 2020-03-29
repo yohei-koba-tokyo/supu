@@ -5,9 +5,15 @@ class FriendsController < ApplicationController
     @thismonth = Date.today.month
     @nextmonth = Date.today.prev_month(-1).month
     @nextnextmonth = Date.today.prev_month(-2).month
-    @friends_thismonth = Friend.select { |friend| friend.birth.present? && friend.birth.month == @thismonth }
-    @friends_nextmonth = Friend.select { |friend| friend.birth.present? && friend.birth.month == @nextmonth }
-    @friends_nextnextmonth = Friend.select { |friend| friend.birth.present? && friend.birth.month == @nextnextmonth }
+
+    if user_signed_in?
+      user_id = current_user.id
+    else
+      user_id = -1
+    end
+    @friends_thismonth = Friend.select { |friend| user_id == friend.user_id && friend.birth.present? && friend.birth.month == @thismonth }
+    @friends_nextmonth = Friend.select { |friend| user_id == friend.user_id && friend.birth.present? && friend.birth.month == @nextmonth }
+    @friends_nextnextmonth = Friend.select { |friend| user_id == friend.user_id && friend.birth.present? && friend.birth.month == @nextnextmonth }
   end
 
   def new
