@@ -1,4 +1,7 @@
 ![supulogo1](https://user-images.githubusercontent.com/60637308/77823443-9af6d480-713e-11ea-93db-0fd2a023dee8.png)
+
+<div style="text-align: center;">Surprize Gift Maker "supu"</div>
+<div style="text-align: center;">http://surprizegiftmaker.herokuapp.com/</div>
 Surprize Gift Maker "supu"
 http://surprizegiftmaker.herokuapp.com/
 ====
