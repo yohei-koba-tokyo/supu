@@ -1,7 +1,7 @@
 - if current_user.id == message.user_id
   %p.me 
     = message.user.nickname 
-    = message.created_at.to_s(:time2)
+    = I18n.l(message.created_at)
   .balloonright
     -if message.content.present?
       = simple_format(message.content)
@@ -9,7 +9,7 @@
 -else
   %p.name
     = message.user.nickname 
-    = message.created_at.to_s(:time2)
+    = I18n.l(message.created_at)
   .balloon
     -if message.content.present?
       = simple_format(message.content)
