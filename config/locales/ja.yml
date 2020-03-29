@@ -2,6 +2,9 @@ ja:
   date:
     formats:
       default: '%_-m/%_-d(%a)'
+  time:
+    formats:
+      default: '%_-m/%_-d(%a) %H:%M'
   activerecord:
     models:
       user: ユーザー # view側： User.model_name.human => "ユーザ" / t("activerecord.models.user")と同じ
