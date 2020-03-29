@@ -13,7 +13,7 @@ Surprize Gift Maker "supu"
 
 
 
-## Description 解説
+## Description　　-　解説
 
 #### ギフトサプライズは人から貰うのも嬉しいですが、あげるのもとても楽しいものです。
 
@@ -32,7 +32,7 @@ Surprize Gift Maker "supu"
 　　
 
 
-## Demo & Usage　デモ & 使用方法
+## Demo & Usage　　-　デモ & 使用方法
 
 ![supufind mov](https://user-images.githubusercontent.com/60637308/77828899-98f23d00-7161-11ea-99a7-711ba45a536a.gif)
 
@@ -93,7 +93,7 @@ Surprize Gift Maker "supu"
 
 　　
 
-## Requirement 要件
+## Requirement　　-　要件
 
 　　１．恐れ入りますが、Chromeの最新版を利用してアクセスいただけると、不具合無くご覧いただけると思います。
 
@@ -105,7 +105,7 @@ Surprize Gift Maker "supu"
 
 　　
 
-## Future Plan 今後実装予定の機能
+## Future Plan　　-　今後実装予定の機能
 
 　　１．rspecによる単体テストと統合テストの実装
 
@@ -123,7 +123,7 @@ Surprize Gift Maker "supu"
 
 　　
 
-## Author 作者
+## Author　　-　作者
 
 [Yohei_Kobayashi](https://github.com/yohei-koba-tokyo)
 
@@ -131,7 +131,7 @@ Surprize Gift Maker "supu"
 
 　　
 
-## DB creation データベース設計
+## DB creation　　-　データベース設計
 
 ![dber](https://user-images.githubusercontent.com/60637308/77844020-96352d80-71dd-11ea-9429-482bc2b59edf.jpg)
 
