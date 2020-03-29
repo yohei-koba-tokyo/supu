@@ -128,3 +128,82 @@ Surprize Gift Maker "supu"
 [Yohei_Kobayashi](https://github.com/yohei-koba-tokyo)
 
 2020/3/29時点での制作期間：16日間（ 一日あたり平均6時間 / 計96時間 ）
+
+　　
+
+## DB creation データベース設計
+
+### user テーブル
+|Column|Type|Options|
+|------|----|-------|
+|nickname|string|null: false, unique: true|
+|email|string|null: false, unique: true|
+
+##### Association
+- has_many :mission_users
+- has_many :missions, through: :mission_users
+- has_many :friends
+- has_many :messages
+- validates :nickname, presence: true
+
+　　
+
+### mission_user 中間テーブル
+|Column|Type|Options|
+|------|----|-------|
+|user|integer|foreign_key: true|
+|mission|integer|foreign_key: true|
+
+##### Association
+- belongs_to :mission
+- belongs_to :user
+
+　　
+
+### mission テーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null:false|
+|datetime|date||
+|comment|text||
+|mission_type|integer||
+|friend|integer|foreign_key: true|
+
+##### Association
+- has_many :mission_users, dependent: :destroy
+- has_many :users, through: :mission_users
+- belongs_to :friend
+- has_many :messages, dependent: :destroy
+- default_scope -> { order(datetime: :asc) }
+
+　　
+
+### friend テーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string||
+|user|integer|foreign_key: true|
+|sex|integer||
+|birth|date||
+|twitter|string||
+|memo|text||
+
+##### Association
+- belongs_to :user
+- has_many :missions, dependent: :destroy
+- default_scope -> { order(name: :asc) }
+
+　　
+
+### message テーブル
+|Column|Type|Options|
+|------|----|-------|
+|content|string||
+|image|string||
+|mission|integer|foreign_key: true|
+|user|integer|foreign_key: true|
+
+##### Association
+- belongs_to :mission
+- belongs_to :user
+- mount_uploader :image, ImageUploader
