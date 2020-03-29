@@ -133,6 +133,9 @@ Surprize Gift Maker "supu"
 
 ## DB creation データベース設計
 
+![dber](https://user-images.githubusercontent.com/60637308/77844020-96352d80-71dd-11ea-9429-482bc2b59edf.jpg)
+
+
 ### user テーブル
 |Column|Type|Options|
 |------|----|-------|
