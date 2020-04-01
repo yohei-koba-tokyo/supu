@@ -17,7 +17,7 @@ describe User do
       expect(user.errors[:password]).to include("を入力してください")
     end
     it "is invalid passwords doesn't match" do
-      user = build(:user, password_confirmation: "wrongpassword")
+      user = build(:user, password_confirmation: "wrongpass")
       user.valid?
       expect(user.errors[:password_confirmation]).to include("とPasswordの入力が一致しません")
     end

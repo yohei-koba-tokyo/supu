@@ -3,7 +3,7 @@ class Mission < ApplicationRecord
   has_many :users, through: :mission_users
   belongs_to :friend
   has_many :messages, dependent: :destroy
-  validates :name, :datetime, :friend_id, presence: true
+  validates :name, :datetime, :friend_id, presence: true, length: { maximum: 15 }
 
   default_scope -> { order(datetime: :asc) }
 end
