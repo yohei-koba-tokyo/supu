@@ -51,16 +51,64 @@ describe FriendsController do
     end
     it "saves the new contact in the database" do
       friend_params = attributes_for(:friend)
-      binding.pry
       expect{
         post :create, params: { friend: friend_params }
       }.to change(Friend, :count).by(1)
     end
-    it "renders the :index template" do
+    it "render to friends_path" do
       friend_params = attributes_for(:friend)
       post :create, params: { friend: friend_params }
       expect(response).to redirect_to friends_path
     end
+    it "renders the :new when error" do
+      friend_params = attributes_for(:friend, name: "")
+      post :create, params: { friend: friend_params }
+      expect(response).to render_template :new
+    end
+  end
+
+
+
+  
+  describe 'PATCH #update' do
+  let(:user) { create(:user) }
+  # let(:friend) { create(:friend) }
+    before do
+      login user
+    end
+    it "saves the new contact in the database" do
+      friend = attributes_for(:friend)
+      expect{
+        patch :update, params: { id: friend }
+      }.to change(Friend, :count).by(1)
+    end
+
+
+
+
+  # let(:user) { create(:user) }
+  # # let(:friend) { create(:friend) }
+  #   before do
+  #     login user
+  #   end
+  #   it "saves the edit contact in the database" do
+  #     friend_params = attributes_for(:friend)
+  #     # expect{
+  #     #   patch :update, params: { friend: friend_params }
+  #     # }.to change(Friend, :count).by(1)
+  #     patch :update, params: { friend: friend_params }
+  #     expect(assigns(:friend)).to eq friend_params
+  #   end
+    # it "render to friends_path" do
+    #   friend_params = attributes_for(:friend)
+    #   post :create, params: { friend: friend_params }
+    #   expect(response).to redirect_to friends_path
+    # end
+    # it "renders the :new when error" do
+    #   friend_params = attributes_for(:friend, name: "")
+    #   post :create, params: { friend: friend_params }
+    #   expect(response).to render_template :new
+    # end
   end
 
 
