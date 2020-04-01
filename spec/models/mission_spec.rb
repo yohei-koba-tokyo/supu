@@ -1,6 +1,30 @@
 require 'rails_helper'
 describe Mission do
   describe '#create' do
+
+  context "can save" do
+    it "is valid with a name that has less than 15 characters " do
+      friend = create(:friend)
+      mission = build(:mission, name: "aaaaabbbbbccccc", friend_id: friend.id)
+      expect(mission).to be_valid
+    end
+    it "is valid without a comment" do
+      friend = create(:friend)
+      mission = build(:mission, comment: "", friend_id: friend.id)
+      expect(mission).to be_valid
+    end
+    it "is valid without a mission_type" do
+      friend = create(:friend)
+      mission = build(:mission, mission_type: "", friend_id: friend.id)
+      expect(mission).to be_valid
+    end
+    it "is valid with completed form" do
+      friend = create(:friend)
+      mission = build(:mission, friend_id: friend.id)
+      expect(mission).to be_valid
+    end
+  end
+  context "can not save" do
     it "is invalid without a name" do
       mission = build(:mission, name: "")
       mission.valid?
@@ -11,31 +35,18 @@ describe Mission do
       mission.valid?
       expect(mission.errors[:name]).to include("は15文字以内で入力してください")
     end
-    it "is valid with a name that has less than 15 characters " do
-      mission = build(:mission, name: "aaaaabbbbbccccc")
-      expect(mission).to be_valid
-    end    
 
+    it "is invalid without a datetime" do
+      mission = build(:mission, datetime: "")
+      mission.valid?
+      expect(mission.errors[:datetime]).to include("を入力してください")
+    end
 
-    # it "is valid without a twitter" do
-    #   mission = build(:mission, twitter: "")
-    #   expect(mission).to be_valid
-    # end
-    # it "is valid without a memo" do
-    #   mission = build(:mission, memo: "")
-    #   expect(mission).to be_valid
-    # end
-    # it "is valid without a birth" do
-    #   mission = build(:mission, birth: "")
-    #   expect(mission).to be_valid
-    # end
-    # it "is valid without a sex" do
-    #   mission = build(:mission, sex: "")
-    #   expect(mission).to be_valid
-    # end
-    # it "is valid with completed form" do
-    #   mission = build(:mission)
-    #   expect(mission).to be_valid
-    # end
+    it "is invalid without a friend_id" do
+      mission = build(:mission)
+      mission.valid?
+      expect(mission.errors[:friend_id]).to include("を入力してください")
+    end
+  end
   end
 end
