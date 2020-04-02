@@ -66,6 +66,7 @@ describe FriendsController do
       expect(response).to render_template :new
     end
   end  
+  
   # updateテストエラー未解決
   # describe 'PATCH #update' do
   #   context "as an authorized user" do
