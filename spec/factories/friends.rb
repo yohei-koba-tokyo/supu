@@ -6,7 +6,7 @@ FactoryBot.define do
     twitter               {"legrobeats"}
     memo                  {"テストメモです^^"}
     name                  {Faker::Name.last_name}
-    association :user
+    user
   end
-
+  
 end
