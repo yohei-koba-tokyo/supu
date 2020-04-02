@@ -5,7 +5,7 @@ FactoryBot.define do
     datetime              {Date.today + 10}
     comment               {"thanks, always as ever!"}
     mission_type          {2}
-    association :friend
+    friend
   end
 
 end
