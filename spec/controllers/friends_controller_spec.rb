@@ -76,10 +76,10 @@ describe FriendsController do
         login user
       end
       it "update a friend" do
-        friend_params = attributes_for(:friend, name: "New name")
+        friend_params = attributes_for(:friend, name: "Newname")
         patch :update, params: { id: friend.id, friend: friend_params }
         friend.reload
-        expect(friend.name).to eq "New name"
+        expect(friend.name).to eq "Newname"
       end
     end
   end
