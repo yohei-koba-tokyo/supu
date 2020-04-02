@@ -38,8 +38,8 @@ class FriendsController < ApplicationController
   end
 
   def update
-    @friend =Friend.find(params[:id])
-    if @friend.update(friend_params)
+    friend =Friend.find(params[:id])
+    if friend.update(friend_params)
       redirect_to friend_path
     else
       render :edit

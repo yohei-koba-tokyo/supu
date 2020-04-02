@@ -67,20 +67,21 @@ describe FriendsController do
     end
   end  
   
-  # updateテストエラー未解決
-  # describe 'PATCH #update' do
-  #   context "as an authorized user" do
-  #     let!(:user) { create(:user) }
-  #     let!(:friend) { create(:friend)}
-  #     before do
-  #       login user
-  #     end
-  #     it "update a friend" do
-  #       friend_params = attributes_for(:friend, name: "New name")
-  #       patch :update, params: { id: friend.id, friend: friend_params }
-  #       friend.reload
-  #       expect(friend.name).to eq "New name"
-  #     end
-  #   end
-  # end
+
+  describe 'PATCH #update' do
+    context "as an authorized user" do
+      let!(:user) { create(:user) }
+      let!(:friend) { create(:friend, user_id: user.id)}
+      before do
+        login user
+      end
+      it "update a friend" do
+        friend_params = attributes_for(:friend, name: "Newname")
+        patch :update, params: { id: friend.id, friend: friend_params }
+        friend.reload
+        expect(friend.name).to eq "Newname"
+      end
+    end
+  end
+
 end
