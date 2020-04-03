@@ -12,6 +12,7 @@ class MissionsController < ApplicationController
     @friends_thismonth = Friend.select { |friend| user_id == friend.user_id && friend.birth.present? && friend.birth.month == @thismonth }
     @friends_nextmonth = Friend.select { |friend| user_id == friend.user_id && friend.birth.present? && friend.birth.month == @nextmonth }
     @friends_nextnextmonth = Friend.select { |friend| user_id == friend.user_id && friend.birth.present? && friend.birth.month == @nextnextmonth }
+    
   end
 
   def show
