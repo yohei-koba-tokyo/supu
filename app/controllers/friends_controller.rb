@@ -38,9 +38,9 @@ class FriendsController < ApplicationController
   end
 
   def update
-    friend =Friend.find(params[:id])
-    if friend.update(friend_params)
-      friend.update( day: friend.birth.to_s.match(/..$/)[0] )
+    @friend =Friend.find(params[:id])
+    if @friend.update(friend_params)
+      @friend.update( day: @friend.birth.to_s.match(/..$/)[0] )
       redirect_to friend_path
     else
       render :edit
