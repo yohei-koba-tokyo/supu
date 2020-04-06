@@ -5,15 +5,14 @@ class FriendsController < ApplicationController
     @thismonth = Date.today.month
     @nextmonth = Date.today.prev_month(-1).month
     @nextnextmonth = Date.today.prev_month(-2).month
-
     if user_signed_in?
       user_id = current_user.id
     else
       user_id = -1
     end
-    @friends_thismonth = Friend.select { |friend| user_id == friend.user_id && friend.birth.present? && friend.birth.month == @thismonth }
-    @friends_nextmonth = Friend.select { |friend| user_id == friend.user_id && friend.birth.present? && friend.birth.month == @nextmonth }
-    @friends_nextnextmonth = Friend.select { |friend| user_id == friend.user_id && friend.birth.present? && friend.birth.month == @nextnextmonth }
+    @friends_thismonth = Friend.reorder(:day).select{ |friend| user_id == friend.user_id && friend.birth.present? && friend.birth.month == @thismonth }
+    @friends_nextmonth = Friend.reorder(:day).select { |friend| user_id == friend.user_id && friend.birth.present? && friend.birth.month == @nextmonth }
+    @friends_nextnextmonth = Friend.reorder(:day).select { |friend| user_id == friend.user_id && friend.birth.present? && friend.birth.month == @nextnextmonth }
   end
 
   def new
@@ -23,6 +22,7 @@ class FriendsController < ApplicationController
   def create
     @friend = Friend.new(friend_params)
     if @friend.save
+      @friend.update( day: @friend.birth.to_s.match(/..$/)[0] )
       redirect_to friends_path
     else
       render 'new'
@@ -40,6 +40,7 @@ class FriendsController < ApplicationController
   def update
     friend =Friend.find(params[:id])
     if friend.update(friend_params)
+      friend.update( day: friend.birth.to_s.match(/..$/)[0] )
       redirect_to friend_path
     else
       render :edit
