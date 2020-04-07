@@ -9,9 +9,9 @@ class MessagesController < ApplicationController
         format.json 
       end
     else
-      @messages = @mission.messages.includes(:user)
+      @messages = mission.messages.includes(:user)
       flash.now[:alert] = 'メッセージを入力してください。'
-      render mission_path(mission)
+      redirect_to mission_path(mission)
     end
   end
 

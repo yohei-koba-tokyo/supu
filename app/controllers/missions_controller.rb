@@ -25,12 +25,7 @@ class MissionsController < ApplicationController
     @mission = Mission.new
     @mission.users << current_user
     @mission.friend_id = params[:friend_id]
-    @friends = []
-    Friend.all.each do |friend|
-      if friend.user_id == current_user.id
-        @friends << friend
-      end
-    end
+    @friends = Friend.select{ |friend| friend.user_id == current_user.id }
   end
 
   def create
@@ -38,12 +33,7 @@ class MissionsController < ApplicationController
     if @mission.save
       redirect_to root_path, notice: 'グループを作成しました'
     else
-      @friends = []
-      Friend.all.each do |friend|
-        if friend.user_id == current_user.id
-          @friends << friend
-        end
-      end
+      @friends = Friend.select{ |friend| friend.user_id == current_user.id }
       render :new
     end
   end
