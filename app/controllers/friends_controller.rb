@@ -2,17 +2,17 @@ class FriendsController < ApplicationController
 
 
   def index
-    @thismonth = Date.today.month
-    @nextmonth = Date.today.prev_month(-1).month
-    @nextnextmonth = Date.today.prev_month(-2).month
     if user_signed_in?
+      @thismonth = Date.today.month
+      @nextmonth = Date.today.prev_month(-1).month
+      @nextnextmonth = Date.today.prev_month(-2).month
       user_id = current_user.id
+      @friends_thismonth = Friend.reorder(:day).select{ |friend| user_id == friend.user_id && friend.birth.present? && friend.birth.month == @thismonth }
+      @friends_nextmonth = Friend.reorder(:day).select { |friend| user_id == friend.user_id && friend.birth.present? && friend.birth.month == @nextmonth }
+      @friends_nextnextmonth = Friend.reorder(:day).select { |friend| user_id == friend.user_id && friend.birth.present? && friend.birth.month == @nextnextmonth }
     else
-      user_id = -1
+      redirect_to new_user_session_path
     end
-    @friends_thismonth = Friend.reorder(:day).select{ |friend| user_id == friend.user_id && friend.birth.present? && friend.birth.month == @thismonth }
-    @friends_nextmonth = Friend.reorder(:day).select { |friend| user_id == friend.user_id && friend.birth.present? && friend.birth.month == @nextmonth }
-    @friends_nextnextmonth = Friend.reorder(:day).select { |friend| user_id == friend.user_id && friend.birth.present? && friend.birth.month == @nextnextmonth }
   end
 
   def new
