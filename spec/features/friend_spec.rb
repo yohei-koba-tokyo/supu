@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 feature 'friend', type: :feature do
-
   let(:user) { create(:user) }
 
   scenario 'post friend' do
@@ -20,13 +19,13 @@ feature 'friend', type: :feature do
     click_link('追加')
     expect(current_path).to eq new_friend_path
     # フレンドの登録
-    expect {
+    expect do
       fill_in "friend[name]", with: "Ted"
       fill_in 'friend[birth]', with: "1982-10-20"
       select "男性", from: 'friend[sex]'
       fill_in 'friend[twitter]', with: "legrobeats"
       fill_in 'friend[memo]', with: "memomemomemo."
       find('input[type="submit"]').click
-    }.to change(Friend, :count).by(1)
+    end.to change(Friend, :count).by(1)
   end
 end

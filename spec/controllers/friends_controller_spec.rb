@@ -1,12 +1,10 @@
 require 'rails_helper'
 describe FriendsController do
-
   context "when sign out" do
-
     describe 'GET #new' do
       it "redirect to new_user_session" do
         get :new
-        expect(response).to redirect_to (new_user_session_path)
+        expect(response).to redirect_to new_user_session_path
       end
     end
 
@@ -14,14 +12,14 @@ describe FriendsController do
       it "redirect to new_user_session" do
         friend = create(:friend)
         get :edit, params: { id: friend }
-        expect(response).to redirect_to (new_user_session_path)
+        expect(response).to redirect_to new_user_session_path
       end
     end
 
     describe 'GET #index' do
       it "redirect to new_user_session" do
         get :index
-        expect(response).to redirect_to (new_user_session_path)
+        expect(response).to redirect_to new_user_session_path
       end
     end
 
@@ -29,7 +27,7 @@ describe FriendsController do
       it "redirect to new_user_session" do
         friend = create(:friend)
         get :show, params: { id: friend }
-        expect(response).to redirect_to (new_user_session_path)
+        expect(response).to redirect_to new_user_session_path
       end
     end
 
@@ -37,24 +35,22 @@ describe FriendsController do
       it "redirect to new_user_session" do
         friend_params = attributes_for(:friend)
         post :create, params: { friend: friend_params }
-        expect(response).to redirect_to (new_user_session_path)
+        expect(response).to redirect_to new_user_session_path
       end
-    end  
+    end
 
     describe 'PATCH #update' do
-      let!(:friend) { create(:friend)}
+      let!(:friend) { create(:friend) }
       it "redirect to new_user_session" do
         friend_params = attributes_for(:friend, name: "aaaaaa")
         patch :update, params: { id: friend.id, friend: friend_params }
         # friend.reload
-        expect(response).to redirect_to (new_user_session_path)
+        expect(response).to redirect_to new_user_session_path
       end
     end
-
   end
 
   context "when sign in" do
-
     let(:user) { create(:user) }
     before do
       login user
@@ -103,9 +99,9 @@ describe FriendsController do
     describe 'POST #create' do
       it "saves the new contact in the database" do
         friend_params = attributes_for(:friend)
-        expect{
+        expect do
           post :create, params: { friend: friend_params }
-        }.to change(Friend, :count).by(1)
+        end.to change(Friend, :count).by(1)
       end
       it "render to friends_path" do
         friend_params = attributes_for(:friend)
@@ -117,10 +113,10 @@ describe FriendsController do
         post :create, params: { friend: friend_params }
         expect(response).to render_template :new
       end
-    end  
+    end
 
     describe 'PATCH #update' do
-      let!(:friend) { create(:friend, user_id: user.id)}
+      let!(:friend) { create(:friend, user_id: user.id) }
       it "update a friend" do
         friend_params = attributes_for(:friend, name: "Newname")
         patch :update, params: { id: friend.id, friend: friend_params }
@@ -134,6 +130,5 @@ describe FriendsController do
         expect(response).to render_template :edit
       end
     end
-    
   end
 end
