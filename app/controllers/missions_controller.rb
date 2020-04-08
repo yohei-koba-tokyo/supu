@@ -27,10 +27,12 @@ class MissionsController < ApplicationController
 
   def create
     @mission = Mission.new(mission_params)
-    return redirect_to root_path if @mission.save
-
-    @friends = Friend.select { |friend| friend.user_id == current_user.id }
-    render :new
+    if @mission.save
+      redirect_to root_path
+    else
+      @friends = Friend.select { |friend| friend.user_id == current_user.id }
+      render :new
+    end
   end
 
   def edit

@@ -6,7 +6,10 @@
           %p= I18n.l(mission.datetime)
         -else
           %p.past= mission.datetime.to_s(:date3)
-        =image_tag "#{mission.mission_type}", size: "100x100"
+        -if mission.mission_type
+          =image_tag "#{mission.mission_type}", size: "100x100"
+        -else
+          =image_tag "6", size: "100x100"
       .contents__content__mission
         %p
           = "「#{mission.name}」"
