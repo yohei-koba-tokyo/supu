@@ -1,9 +1,8 @@
 require 'rails_helper'
 
 feature 'message', type: :feature do
-
   let(:user) { create(:user) }
-  let(:mission) {create(:mission)}
+  let(:mission) { create(:mission) }
 
   scenario 'post message' do
     # ログイン処理
@@ -14,12 +13,12 @@ feature 'message', type: :feature do
     expect(current_path).to eq root_path
     expect(page).to have_no_content('Send')
     # メッセージの投稿
-    expect {
+    expect do
       visit mission_path(mission)
       expect(current_path).to eq mission_path(mission)
       attach_file 'message[image]', "public/images/test_image.png"
       fill_in 'message[content]', with: 'フィーチャスペックのテスト'
       find('input[type="submit"]').click
-    }.to change(Message, :count).by(1)
+    end.to change(Message, :count).by(1)
   end
 end

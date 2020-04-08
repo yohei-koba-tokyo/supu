@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 feature 'mission', type: :feature do
-
   let(:user) { create(:user) }
   let(:friend) { create(:friend, user_id: user.id) }
 
@@ -22,12 +21,12 @@ feature 'mission', type: :feature do
     click_link('ミッション作成')
     expect(current_path).to eq new_mission_path
     # ミッションの登録
-    expect {
+    expect do
       fill_in "mission[name]", with: "誕生日会"
       fill_in 'mission[datetime]', with: "2029-10-20"
       select "友達", from: 'mission[mission_type]'
       fill_in 'mission[comment]', with: "祝いましょう！！"
       find('input[type="submit"]').click
-    }.to change(Mission, :count).by(1)
+    end.to change(Mission, :count).by(1)
   end
 end

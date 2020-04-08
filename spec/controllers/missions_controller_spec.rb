@@ -1,27 +1,25 @@
 require 'rails_helper'
 describe MissionsController do
-
   context "when sign out" do
-
     describe 'GET #index' do
       it "http access success" do
         get :index
         expect(response).to have_http_status(:success)
       end
     end
-    
+
     describe 'GET #show' do
       it "redirect to new_user_session" do
         mission = create(:mission)
         get :show, params: { id: mission }
-        expect(response).to redirect_to (new_user_session_path)
+        expect(response).to redirect_to new_user_session_path
       end
     end
 
     describe 'GET #new' do
       it "redirect to new_user_session" do
         get :new
-        expect(response).to redirect_to (new_user_session_path)
+        expect(response).to redirect_to new_user_session_path
       end
     end
 
@@ -29,7 +27,7 @@ describe MissionsController do
       it "redirect to new_user_session" do
         mission_params = attributes_for(:mission)
         post :create, params: { mission: mission_params }
-        expect(response).to redirect_to (new_user_session_path)
+        expect(response).to redirect_to new_user_session_path
       end
     end
 
@@ -37,16 +35,16 @@ describe MissionsController do
       it "redirect to new_user_session" do
         mission = create(:mission)
         get :edit, params: { id: mission }
-        expect(response).to redirect_to (new_user_session_path)
+        expect(response).to redirect_to new_user_session_path
       end
     end
 
     describe 'PATCH #update' do
-      let!(:mission) { create(:mission)}
+      let!(:mission) { create(:mission) }
       it "redirect to new_user_session" do
         mission_params = attributes_for(:mission, name: "bbbbbbb")
         patch :update, params: { id: mission.id, mission: mission_params }
-        expect(response).to redirect_to (new_user_session_path)
+        expect(response).to redirect_to new_user_session_path
       end
     end
   end
@@ -62,7 +60,7 @@ describe MissionsController do
         expect(response).to have_http_status(:success)
       end
     end
-    
+
     describe 'GET #show' do
       it "is expected to render template matcher show" do
         mission = create(:mission)
@@ -84,13 +82,12 @@ describe MissionsController do
     end
 
     describe 'POST #create' do
-
       it "is expected to change `Mission.count` by 1" do
         friend = create(:friend)
         mission_params = attributes_for(:mission, friend_id: friend.id)
-        expect{
+        expect do
           post :create, params: { mission: mission_params }
-        }.to change(Mission, :count).by(1)
+        end.to change(Mission, :count).by(1)
       end
       it "is expected to redirect to /" do
         friend = create(:friend)
@@ -116,7 +113,7 @@ describe MissionsController do
     end
 
     describe 'PATCH #update' do
-      let!(:mission) { create(:mission)}
+      let!(:mission) { create(:mission) }
       it "is expected to eq new mission name" do
         mission_params = attributes_for(:mission, name: "NewMission", user_ids: [user.id])
         patch :update, params: { id: mission.id, mission: mission_params }
@@ -135,11 +132,6 @@ describe MissionsController do
         mission.reload
         expect(response).to render_template :edit
       end
-
     end
-
-  
   end
-
-
 end

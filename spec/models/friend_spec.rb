@@ -5,7 +5,7 @@ describe Friend do
       it "is valid with a name that has less than 7 characters " do
         friend = build(:friend, name: "aaaaaaa")
         expect(friend).to be_valid
-      end    
+      end
       it "is valid without a twitter" do
         friend = build(:friend, twitter: "")
         expect(friend).to be_valid
@@ -39,6 +39,5 @@ describe Friend do
         expect(friend.errors[:name]).to include("は7文字以内で入力してください")
       end
     end
-
   end
 end

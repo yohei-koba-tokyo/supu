@@ -108,7 +108,7 @@ Surprize Gift Maker "supu"  http://surprizegiftmaker.herokuapp.com/
 
 ## Future Plan　　-　今後実装予定の機能
 
-　　１．rspecによる単体テストと統合テストの実装(コントローラテスト以外完了済:2020-4-6)
+　　１．rspecによる単体テストと統合テストの実装 **→ 2020年4月7日、実装済**
 
 　　２．レスポンシブデザインの実装
 
