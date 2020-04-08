@@ -64,3 +64,4 @@ Metrics/AbcSize:
 Style/GuardClause:
   Exclude:
     - 'app/controllers/missions_controller.rb'
+    
