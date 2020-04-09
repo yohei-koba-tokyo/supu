@@ -2,7 +2,7 @@
   = link_to mission_path(mission, :anchor => 'anchor') do
     .contents__content
       .picture
-        -if mission.datetime > Date.today
+        -if mission.datetime >= Date.today
           %p= I18n.l(mission.datetime)
         -else
           %p.past= mission.datetime.to_s(:date3)
