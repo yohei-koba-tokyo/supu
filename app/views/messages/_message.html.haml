@@ -1,17 +1,18 @@
-- if current_user.id == message.user_id
-  %p.me 
-    = message.user.nickname 
-    = I18n.l(message.created_at)
-  .balloonright
-    -if message.content.present?
-      = simple_format(message.content)
-    =image_tag message.image.url, class: 'lower-message__image' if message.image.present?
--else
-  %p.name
-    = message.user.nickname 
-    = I18n.l(message.created_at)
-  .balloon
-    -if message.content.present?
-      = simple_format(message.content)
-    =image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+.message{data: {message: {id: message.id}}}
+  - if current_user.id == message.user_id
+    %p.me 
+      = message.user.nickname 
+      = I18n.l(message.created_at)
+    .balloonright
+      -if message.content.present?
+        = simple_format(message.content)
+      =image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+  -else
+    %p.name
+      = message.user.nickname 
+      = I18n.l(message.created_at)
+    .balloon
+      -if message.content.present?
+        = simple_format(message.content)
+      =image_tag message.image.url, class: 'lower-message__image' if message.image.present?
 

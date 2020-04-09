@@ -5,5 +5,8 @@ Rails.application.routes.draw do
   resources :friends
   resources :missions do
     resources :messages, only: %i[index create]
+    namespace :api do
+      resources :messages, only: :index, defaults: { format: 'json' }
+    end
   end
 end
