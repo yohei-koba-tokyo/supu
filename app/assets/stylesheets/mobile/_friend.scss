@@ -1,0 +1,21 @@
+a.fas.fa-user-plus.fa-lg.friendadd {
+  display: none;
+}
+.friend {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  &__name {
+    font-size: 24px;
+    line-height: 40px;
+  }
+  &__birth {
+    line-height: 15px;
+    font-size: 14px;
+    padding-top:18px;
+    padding-right: 10px;
+    .fas.fa-birthday-cake {
+      color: rgba(248, 101, 101, 0.877);
+    }
+  }
+}
