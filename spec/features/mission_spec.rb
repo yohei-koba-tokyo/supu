@@ -12,7 +12,7 @@ feature 'mission', type: :feature do
     find('input[name="commit"]').click
     expect(current_path).to eq root_path
     # フレンド一覧ページに移動
-    click_link('フレンド一覧')
+    click_link('フレンド一覧', match: :first)
     expect(current_path).to eq friends_path
     # フレンド詳細画面に移動
     visit friend_path(friend)
@@ -25,8 +25,8 @@ feature 'mission', type: :feature do
       fill_in "mission[name]", with: "誕生日会"
       fill_in 'mission[datetime]', with: "2029-10-20"
       select "友達", from: 'mission[mission_type]'
-      fill_in 'mission[comment]', with: "祝いましょう！！"
-      find('input[type="submit"]').click
+      fill_in 'mission[comment]', with: "祝いましょう！"
+      find('input.logbtn-new').click
     end.to change(Mission, :count).by(1)
   end
 end
