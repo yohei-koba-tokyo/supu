@@ -1,0 +1,164 @@
+.new-mission {
+  margin: 0 auto;
+  box-sizing: border-box;
+  &__title {
+    font-weight: bold;
+    width:100%;
+    margin-top: 20px;
+    line-height: 40px;
+    text-align: center;
+    .user-input-title {
+      margin-right: 30px;
+      font-weight: normal;
+    }
+    #mission_mission_type, select#mission_friend_id {
+      border-style: none;
+      font-weight: normal;
+      padding: 0 12px;
+      width: 80%;
+      height: 33px;
+      line-height: 33px;
+      margin-bottom: 6px;
+      border-radius: 20px;
+      box-shadow: inset 1px 1px 3px rgba(180, 180, 148, 0.644);  
+    }
+    &__contents {
+      &--left, &--right {
+        font-weight: normal;
+        box-sizing: border-box;
+        // width: 390px;
+        // height: 330px;
+        // padding: 10px;
+        .logbtn-new, input.logbtn-new {
+          background-color: white;
+          border-radius :10px;
+          box-shadow: 2px 2px 4px rgba(180, 180, 148, 0.8);
+          width: 70px;
+          height: 40px;
+          font-weight: bold;
+        }
+        .user-input-date {
+          margin: 5px 0;
+          font-size: 15px;
+          width: 80%;
+        }
+        .user-input-comment {
+          width: 90%;
+          height: 230px;
+          line-height: 17px;
+          padding-top: 12px;
+          font-size:15px;
+        }
+      }
+    }
+  }
+}
+.mission__member {
+  display: flex;
+  padding: 0 10px;
+}
+// インクリメンタルサーチ
+.mission__members {
+  width: 260px;
+  padding-top: 7px;
+  padding-left: 13px;
+  line-height: 30px;
+  text-align: left; 
+  &__leader {
+    color: black;
+  }
+  input#member-form {
+    line-height: 30px;
+    width: 250px;
+    padding-left: 13px;
+    border-style: none;
+    border-radius: 20px;
+    box-shadow: inset 1px 1px 3px rgba(180, 180, 148, 0.644);
+  }
+}
+
+// インクリメンタルサーチ
+b {
+  display: none;
+}
+.chat-group-form {
+  // width: 90%;
+  // margin: 60px auto;
+  // padding: 40px;
+  // background-color: #fff;
+  // border: 1px solid #ddd;
+  // border-radius: 5px;
+  &__errors {
+    // margin: 30px 0;
+    // padding: 20px 40px;
+    // border: 1px solid #ddd;
+    // border-radius: 2px;
+    // text-align: center;
+  }
+  &__label {
+
+  }
+  &__input {
+    float: left;
+    width: 90%;
+    line-height: 20px;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    border: none;
+    box-shadow: inset 1px 1px 2px rgb(173, 173, 173);
+    margin: 0;
+  }
+  &__action-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    color: #fff;
+    background-color: #38aef0;
+    border: 0;
+  }
+  &__field {
+    margin-top: 5px;
+    &:after {
+      content: "";
+      clear: both;
+      display: block;
+    }
+    &--left {
+      float: left;
+      width: 30%;
+      padding-right: 0px;
+      padding-left: 0px;
+      box-sizing: border-box;
+    }
+    &--right {
+      float: right;
+      width: 70%;
+    }
+  }
+}
+
+.chat-group-user {
+  padding: 0 15px;
+  line-height: 27px;
+  font-size: 14px;
+  border-bottom: 1px solid #ddd;
+  &:after {
+    content: "";
+    clear: both;
+    display: block;
+  }
+  &__name {
+    float: left;
+  }
+  &__btn {
+    float: right;
+    display: inline-block;
+    cursor: pointer;
+    &--add {
+      color: #38aef0;
+    }
+    &--remove {
+      color: #f05050;
+    }
+  }
+}
