@@ -26,3 +26,39 @@
         =link_to new_user_registration_path, class: "fas fa-user-plus fa-lg" do
           .nav__menu
             = "新規登録"
+
+
+
+
+    #nav-drawer
+      %input#nav-input.nav-unshown{:type => "checkbox"}/
+      %label#nav-open{:for => "nav-input"}
+        %span
+      %label#nav-close.nav-unshown{:for => "nav-input"}
+      #nav-content
+        - if user_signed_in?
+          %ul.mobile
+            =link_to "logo", root_path, class:"supulogo"
+            %li.mobile=link_to " もうすぐ誕生日のフレンド", "/", class:"mobile-menu fas fa-birthday-cake fa-lg"
+            %li.mobile=link_to " フレンド一覧", friends_path, class: "mobile-menu fas fa-user-friends fa-lg" 
+            %li.mobile=link_to " 新フレンド登録", new_friend_path, class: "mobile-menu fas fa-user-plus fa-lg"
+            %li.mobile=link_to " ミッション一覧", missions_path, class: "mobile-menu fas fa-tasks fa-lg"
+            %li.mobile=link_to " 新ミッション作成", new_mission_path, class: "mobile-menu fas fa-gift fa-lg"
+            %li.mobile=link_to " #{current_user.nickname}さん : 登録内容の編集", edit_user_registration_path, class: "mobile-menu fas fa-user-edit fa-lg"
+          
+            %li.mobile=link_to " ログアウト", destroy_user_session_path, method: :DELETE, class: "mobile-menu fas fa-moon fa-lg"
+        - else
+          %ul.mobile
+            =link_to "logo", root_path, class:"supulogo"
+            %li.mobile=link_to " ログイン", new_user_session_path, class: "mobile-menu far fa-user fa-lg"
+            %li.mobile=link_to " 新規登録", new_user_registration_path, class: "mobile-menu fas fa-user-plus fa-lg"
+        .mobile-footer
+          =link_to new_user_session_path, class: "footer-btn" do
+            新規会員登録&ログイン
+          |
+          =link_to "https://yohei-koba-tokyo.github.io/lovepeaceandcodes/", class:"footer-btn" do
+            お問い合わせ
+          .copyright
+            .far.fa-copyright
+            supu 2020
+      

@@ -14,7 +14,7 @@ feature 'friend', type: :feature do
     find('input[name="commit"]').click
     expect(current_path).to eq root_path
     # フレンド一覧ページに移動
-    click_link('フレンド一覧')
+    click_link('フレンド一覧', match: :first)
     expect(current_path).to eq friends_path
     click_link('追加')
     expect(current_path).to eq new_friend_path

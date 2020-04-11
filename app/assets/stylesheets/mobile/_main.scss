@@ -1,0 +1,41 @@
+
+.contents__guidetop {
+  padding-top: 35px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  span {
+    color: red;
+    margin: -6px;
+  }
+}
+.contents__guidebottom {
+  display: none;
+}
+.contents__guidemobile {
+  text-align: center; 
+}
+img.mobile {
+  width: 90%;
+  margin: 10px 0;
+}
+a.login {
+  display: inline-block;
+  padding: 6px;
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+  box-shadow: 1px 1px 3px grey;
+  box-shadow: -1px -1px -3px white;
+  margin: 13px 0 25px 0;
+}
+.mobile-main-footer {
+  width: 100%;
+  line-height: 13px;
+  height:40px;
+  font-size: 7px;
+  text-align: center;
+  a.footer-btn {
+    color: black;
+  }
+}
