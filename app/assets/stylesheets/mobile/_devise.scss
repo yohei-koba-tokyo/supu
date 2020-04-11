@@ -1,0 +1,39 @@
+h2 {
+  text-align: center;
+  margin-top: 10px;
+}
+label {
+  font-size: small;
+  margin-left: 10px;
+}
+
+em {
+  font-size: small;
+}
+
+input {
+  border-radius: 10px;
+  line-height: 30px;
+  width: 80%;
+  // padding-left: 10px;
+  margin:0 0 20px 8%;
+}
+
+.actions {
+  text-align: center;
+}
+
+input.logbtn {
+  width: 100px;
+  margin: 10px;
+}
+
+a {
+  margin-left: 10px;
+}
+
+input#user_remember_me {
+  position: relative;
+  bottom: 25px;
+  left: 110px;
+}

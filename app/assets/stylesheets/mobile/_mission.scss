@@ -1,0 +1,51 @@
+
+.contents {
+  margin: 10px;
+  height: 100vh;
+  overflow-y: scroll;
+  &__content {
+    margin-top: -23px;
+    color: black;
+    width: 100%;
+    padding: 5px;
+    display: flex;
+    border-bottom: 1px grey dashed;
+    .picture {
+      width: 100px;
+      background-color: rgb(255, 255, 255);
+      position: relative;
+      border-radius: 20px;
+      p {
+        position: absolute;
+        font-weight: bold;
+        font-size: 13px;
+        background: linear-gradient(transparent 50%, #fffb00c5 50%);
+      }
+      p.past {
+        position: absolute;
+        font-weight: bold;
+        font-size: 13px;
+        background: linear-gradient(transparent 50%, #ff2d2d91 50%);
+      }
+      img {
+        box-sizing: border-box;
+        border-radius: 20px;
+        padding: 5px;
+      }
+    }
+    &__mission {
+      box-sizing: border-box;
+      word-wrap:break-word;
+      p {
+        font-weight: bold;
+        font-size: 18px;
+      }
+      #id_date {
+        margin-right: 0px;
+      }
+    }
+  }
+}
+.news {
+  display: none;
+}

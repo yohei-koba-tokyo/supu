@@ -2,10 +2,18 @@
 @import "variables";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+
+@media screen and (min-width: 501px){
 @import "header";
 @import "main";
 @import "mission";
 @import "mission-new";
 @import "friends";
 @import "footer";
-
+}
+@media screen and (max-width: 500px){
+@import "mobile/header";
+@import "mobile/main";
+@import "mobile/devise";
+@import "mobile/mission";
+}

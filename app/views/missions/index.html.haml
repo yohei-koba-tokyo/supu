@@ -22,9 +22,26 @@
         #slide
           %ul
             %li
-              %img{:alt => "", :height => "280", :src => "assets/aaaa.jpg", :width => "520"}/
+              %img.slide{:alt => "", :src => "assets/aaaa.jpg"}/
             %li
-              %img{:alt => "", :height => "280", :src => "assets/bbbb.jpg", :width => "520"}/
+              %img.slide{:alt => "", :src => "assets/bbbb.jpg"}/
             %li
-              %img{:alt => "", :height => "280", :src => "assets/cccc.jpg", :width => "520"}/
+              %img.slide{:alt => "", :src => "assets/cccc.jpg"}/
+      .contents__guidemobile
+        %img.mobile{:alt => "", :src => "assets/aaaa.jpg"}/
+        %img.mobile{:alt => "", :src => "assets/bbbb.jpg"}/
+        %img.mobile{:alt => "", :src => "assets/cccc.jpg"}/
+        %p こんにちは、ゲストさん
+        =link_to "はじめる", new_user_registration_path, class:"login"
+        .mobile-main-footer
+          =link_to new_user_session_path, class: "footer-btn" do
+            新規会員登録&ログイン
+          |
+          =link_to "https://yohei-koba-tokyo.github.io/lovepeaceandcodes/", class:"footer-btn" do
+            お問い合わせ
+          .copyright
+            .far.fa-copyright
+            supu 2020
+        
+      
 
