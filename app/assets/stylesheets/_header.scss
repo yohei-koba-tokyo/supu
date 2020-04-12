@@ -15,14 +15,14 @@ header {
 h1 {
   display: flex;
   justify-content: space-between;
-  padding: 0 50px;
+  padding-right: 30px;
   a.supulogo {
     cursor: pointer;
     display: block;
-    width: 190px;
+    width: 230px;
     height: 80px;
     font-size: 0;
-    background: url(supulogo.png) left center/160px auto no-repeat;
+    background: url(supulogo.png) left top/230px auto no-repeat;
   }
   .nav {
     box-sizing: border-box;

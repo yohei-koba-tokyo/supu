@@ -1,4 +1,4 @@
-![supulogo1](https://user-images.githubusercontent.com/60637308/77823443-9af6d480-713e-11ea-93db-0fd2a023dee8.png)
+![supulogo](https://user-images.githubusercontent.com/60637308/79060497-909d1480-7cc0-11ea-90fd-46291f53e3a5.png)
 
 Surprize Gift Maker "supu"  http://surprizegiftmaker.herokuapp.com/
 ====
