@@ -19,7 +19,6 @@
   p.birth {
     display: inline;
     font-size: 13px;
-    
   }
 }
 input#friend_name {
@@ -30,7 +29,8 @@ p.birth {
   margin: 10px;
 }
 select#friend_sex {
-  margin: 0 26px;
+  margin: 0 0px 16px 30px;
+  height: 30px;
 }
 
 textarea#friend_memo {

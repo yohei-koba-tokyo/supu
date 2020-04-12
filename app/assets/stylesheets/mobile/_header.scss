@@ -98,9 +98,9 @@ h1 {
     left: 0;
     z-index: 9999;/*最前面に*/
     width: 90%;/*右側に隙間を作る（閉じるカバーを表示）*/
-    max-width: 280px;/*最大幅（調整してください）*/
+    max-width: 270px;/*最大幅（調整してください）*/
     height: 100%;
-    background: linear-gradient(to right, white, rgb(254, 255, 213));
+    background: linear-gradient(to top, rgb(254, 255, 214), white);
     transition: .3s ease-in-out;/*滑らかに表示*/
     -webkit-transform: translateX(-105%);
     transform: translateX(-105%);/*左に隠しておく*/

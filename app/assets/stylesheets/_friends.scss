@@ -54,9 +54,9 @@
           height: 50px;
           font-weight: bold;
           text-align: center;
-          font-size: 16px;
+          font-size: 15px;
           min-width: 80px;
-          padding: 0 5px;
+          padding: 0 3px;
           margin: auto 10px;
           line-height: 50px;
           box-shadow: 1px 1px 2px rgb(158, 153, 153);
@@ -92,6 +92,9 @@
       }
       a.twitter-timeline {
         padding-left:10px;
+      }
+      a.mobile__twitter-data, .mobile__friend-memo {
+        display: none;
       }
     }
 }
