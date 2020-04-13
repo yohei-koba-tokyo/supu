@@ -8,7 +8,7 @@ p.contents__title, .mission-wrap {
 
 .chatbox {
   width: 100%;
-  height: calc(100vh - 70px); 
+  height: calc(100vh - 70px);
   &__main {
     background-color: rgba(112, 112, 112, 0.11);
     height: calc(100% - 60px);
@@ -18,14 +18,16 @@ p.contents__title, .mission-wrap {
 
 
     &__mobile__edit-btn {
-      position: absolute;
-      z-index: 11;
+      position: fixed;
       right: 19px;
       height: 36px;
+      z-index: 11;
       width: 36px;
-      color: rgb(255, 255, 255);
+      color: black;
+      text-shadow: white 3px 3px 0px, white -3px 3px 0px,
+      white 3px -3px 0px, white -3px -3px 0px;
+
       border-radius: 20px;
-      background-color: rgb(43, 25, 25);
       /*チェックボックス等は非表示に*/
       .nav-unshown-2 {
         display:none;

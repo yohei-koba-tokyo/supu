@@ -36,6 +36,10 @@
     &__mission {
       box-sizing: border-box;
       word-wrap:break-word;
+      width: calc(100% - 100px);
+      &--text {
+
+      }
       p.mission-name {
         font-weight: bold;
         font-size: 18px;

@@ -14,6 +14,6 @@ $(function(){
     console.log(resultA);
     console.log($(resultA).offset());
     var targetY = $(resultA).offset().top - 300;
-    $('.mission-wrap').animate({scrollTop: targetY}, 500, 'swing');
+    $('.mission-wrap').animate({scrollTop: targetY}, 500, 'swing')
   };
 });
