@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'missions#index'
-  resources :users, only: %i[index edit update] do
+  resources :users, only: :index do
     member do
       get 'news'
     end
