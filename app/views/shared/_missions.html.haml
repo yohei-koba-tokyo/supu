@@ -3,9 +3,9 @@
     .contents__content
       .picture
         -if mission.datetime >= Date.today
-          %p= I18n.l(mission.datetime)
+          %p.future= I18n.l(mission.datetime)
         -else
-          %p.past= mission.datetime.to_s(:date3)
+          %p.past= I18n.l(mission.datetime)
         -if mission.mission_type
           =image_tag "#{mission.mission_type}", size: "100x100"
         -else
