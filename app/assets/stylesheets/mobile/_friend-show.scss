@@ -51,6 +51,12 @@
   &__right__top__sex {
     margin-top: 10px;
   }
+  &__right__top__missions {
+    a.small {
+      color: rgb(102, 90, 90);
+      margin-left: 0;
+    }
+  }
 }
 p.memo {
   width: 100%;

@@ -3,7 +3,12 @@
   height: 100vh;
   min-width: 965px;
 }
-
+img {
+  width:auto;
+  // height:auto;
+  max-width:100%;
+  // max-height:100%;
+}
 .topcover {
   background: url(main2.jpg) no-repeat top center;
   background-size: cover;

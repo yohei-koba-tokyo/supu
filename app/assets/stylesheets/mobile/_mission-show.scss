@@ -1,0 +1,212 @@
+p.contents__title, .mission-wrap {
+  display: none;
+}
+.mission__now__inner__left, .mission__now__inner__right, .contents__now {
+  display: none;
+}
+
+
+.chatbox {
+  width: 100%;
+  height: calc(100vh - 70px); 
+  &__main {
+    background-color: rgba(112, 112, 112, 0.11);
+    height: calc(100% - 60px);
+    width: 100%;
+    overflow-y: scroll;
+    padding: 9px;
+
+
+    &__mobile__edit-btn {
+      position: absolute;
+      z-index: 11;
+      right: 19px;
+      height: 36px;
+      width: 36px;
+      color: rgb(255, 255, 255);
+      border-radius: 20px;
+      background-color: rgb(43, 25, 25);
+      /*チェックボックス等は非表示に*/
+      .nav-unshown-2 {
+        display:none;
+      }
+      #nav-drawer-2 {
+        width: 100%;
+        height: 100%;
+      }
+      /*ハンバーガーアイコンをCSSだけで表現*/
+      #nav-open-2 span, #nav-open-2 span:before, #nav-open-2 span:after {
+        line-height: 36px;
+        content: '';
+        cursor: pointer;
+      }
+      #nav-open-2 span:before {
+        bottom: -8px;
+      }
+      #nav-open-2 span:after {
+        bottom: -16px;
+      }
+      
+      /*閉じる用の薄黒カバー*/
+      #nav-close-2 {
+        display: none;/*はじめは隠しておく*/
+        position: fixed;
+        z-index: 99;
+        top: 0;/*全体に広がるように*/
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: black;
+        opacity: 0;
+        transition: .3s ease-in-out;
+      }
+      
+      /*中身*/
+      #nav-content-2 {
+        color: black;
+        overflow: auto;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9998;/*最前面に*/
+        width: 90%;/*右側に隙間を作る（閉じるカバーを表示）*/
+        max-width: 270px;/*最大幅（調整してください）*/
+        height: 100%;
+        background: rgba(255, 255, 255, 0.9);
+        transition: .3s ease-in-out;/*滑らかに表示*/
+        -webkit-transform: translateX(-105%);
+        transform: translateX(-105%);/*左に隠しておく*/
+      }
+      
+      /*チェックが入ったらもろもろ表示*/
+      #nav-input-2:checked ~ #nav-close-2 {
+        display: block;/*カバーを表示*/
+        opacity: .5;
+      }
+      
+      #nav-input-2:checked ~ #nav-content-2 {
+        -webkit-transform: translateX(0%);
+        transform: translateX(0%);/*中身を表示（右へスライド）*/
+        box-shadow: 6px 0 25px rgba(0,0,0,.15);
+      }
+    }
+
+
+
+
+    p.name {
+      margin: 10px 0;
+      font-size: 13px;
+    }
+    .balloon{
+      position: relative;
+      width: 100%;
+      min-height: 10px;
+      background-color: white;
+      padding: 10px;
+      border-radius: 15px;
+      word-wrap: break-word;
+    }
+    /* beforeで三角を表現 */
+    .balloon::before{
+      content: '';
+      position: absolute;
+      left: 20px;
+      top: -10px;
+      display: block;
+      width: 0;
+      height: 0;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid white;
+      border-left: 10px solid transparent;
+    }
+    p.me {
+      text-align: right;
+      padding-right: 5px;
+      margin: 10px 0;
+      font-size: 13px;
+    }
+    .balloonright {
+      position: relative;
+      width: 100%;
+      min-height: 10px;
+      background-color: rgb(255, 238, 238);
+      padding: 10px;
+      border-radius: 15px;
+      word-wrap: break-word;
+    }
+    /* beforeで三角を表現 */
+    .balloonright::before{
+      content: '';
+      position: absolute;
+      right: 20px;
+      top: -10px;
+      display: block;
+      width: 0;
+      height: 0;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid rgb(255, 238, 238);
+      border-left: 10px solid transparent;
+    }
+
+
+
+
+
+  }
+  &__form {
+    background-color: rgba(255, 255, 255, 0.753);
+    box-sizing: border-box;
+    height: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 7px;
+    input#message_image.hidden {
+      display: none;
+    }
+    form#new_message {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      input#message_content.form__message {
+        padding-left: 6px;
+        margin: 0;
+        margin-left: 40px;
+        box-sizing: border-box;
+        border-style: none;
+        width: calc(100vw - 110px);
+        box-shadow: inset 1px 1px 3px grey;
+      }
+      .form__mask {
+        line-height: 55px;
+        position: absolute;
+        left: 3px;
+        i.fas {
+          font-size: 26px;
+          cursor: pointer;
+        }
+      }
+      input.form__submit {
+        margin: 0 0 0 7px;
+        border-style: none;
+        background-color: rgb(255, 219, 219);
+        width: 60px;
+        height: 100%;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    }
+    &__editbtn {
+      display: none;
+      a.mission-edit {
+        color: black;
+      }
+    }
+  }
+}
+#anchor {
+  font-size: 13px;
+  text-align: center;
+  line-height: 50px;
+}
