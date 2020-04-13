@@ -26,6 +26,41 @@
             = render partial: 'shared/missions', locals: {mission: mission }
     .chatbox
       .chatbox__main
+        .chatbox__main__mobile__edit-btn
+          #nav-drawer-2
+            %input#nav-input-2.nav-unshown-2{:type => "checkbox"}/
+            %label#nav-open-2.fas.fa-file-alt.fa-lg{:for => "nav-input-2"}
+              %span
+            %label#nav-close-2.nav-unshown-2{:for => "nav-input-2"}
+            #nav-content-2
+              #nav-content-2__name
+                = "「#{@mission.name}」"
+              #nav-content-2__friend
+                = "サプライズの相手: #{@mission.friend.name}さん　"
+
+              #nav-content-2__member
+                メンバー:
+                #nav-content-2__member-box
+                  -@mission.users.each do |u|
+                    ="#{u.nickname}　"
+              #nav-content-2__comment
+                ミッション内容：
+                #nav-content-2__comment-box 
+                  = simple_format(@mission.comment)
+              #nav-content-2__btn
+                =link_to  " ミッションを編集", edit_mission_path, class:"mobile-inner-mission-edit"
+              .mobile-footer
+                =link_to new_user_session_path, class: "footer-btn" do
+                  新規会員登録&ログイン
+                |
+                =link_to "https://yohei-koba-tokyo.github.io/lovepeaceandcodes/", class:"footer-btn" do
+                  お問い合わせ
+                .copyright
+                  .far.fa-copyright
+                  supu 2020
+
+
+
         =render @messages
         #anchor - 以下最新 -
       .chatbox__form

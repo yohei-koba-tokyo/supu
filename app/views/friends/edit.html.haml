@@ -1,7 +1,7 @@
 .topcover
   .topcover__inner
     - if user_signed_in?
-      .contents
+      .contents.box1
         .contents-menu
           .contents-menu--display
             %p.contents__title フレンド一覧
@@ -24,5 +24,5 @@
             = f.text_area :memo, placeholder: "フレンドは何が好き？最近どんなこと言ってた？メモしておこう！"
           = render 'layouts/error_messages', model: f.object
           .friend-data__new__footer
-            = f.submit "更新"
+            = f.submit "更新", class:"edit__btn"
             = link_to "削除", friend_path, method: :delete

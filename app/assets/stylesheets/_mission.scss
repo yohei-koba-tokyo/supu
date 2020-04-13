@@ -134,6 +134,7 @@ a.friendadd {
       background-color: white;
       padding: 10px;
       border-radius: 15px;
+      word-wrap: break-word;
     }
     /* beforeで三角を表現 */
     .balloon::before{
@@ -162,6 +163,7 @@ a.friendadd {
       background-color: rgb(255, 238, 238);
       padding: 10px;
       border-radius: 15px;
+      word-wrap: break-word;
     }
     /* beforeで三角を表現 */
     .balloonright::before{
@@ -351,6 +353,6 @@ a.friendadd {
   font-weight: bold;
 }
 
-.contents__guidemobile {
+.contents__guidemobile, .chatbox__main__mobile__edit-btn {
   display: none;
 }

@@ -1,0 +1,13 @@
+.topcover__inner
+  -if @friends_thismonth.present? || @friends_nextmonth.present? || @friends_nextnextmonth.present?
+    .news__mobile
+      .news__mobile-title
+        もうすぐ誕生日のフレンド
+      = render partial: "missions/month", locals: {month: @thismonth, friends: @friends_thismonth } 
+      = render partial: "missions/month", locals: {month: @nextmonth, friends: @friends_nextmonth } 
+      = render partial: "missions/month", locals: {month: @nextnextmonth, friends: @friends_nextnextmonth } 
+  -else
+    .news__main
+      直近3ヶ月誕生日を迎えるフレンドはいないようです
+.nav__menu__friend-birth
+  =link_to "トップに戻る", "/", class:"friend-to-back"

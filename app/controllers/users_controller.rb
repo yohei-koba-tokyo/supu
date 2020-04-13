@@ -8,4 +8,8 @@ class UsersController < ApplicationController
       format.json
     end
   end
+
+  def news
+    birthday_list
+  end
 end

@@ -1,43 +1,48 @@
 .topcover
   .topcover__inner
     - if user_signed_in?
-      .contents
+      .contents.box1
         .contents-menu
           .contents-menu--display
             %p.contents__title フレンド一覧
             =link_to "追加", new_friend_path, class:"fas fa-user-plus fa-lg friendadd"
         - current_user.friends.each do |friend|
           = render partial: 'side-friends', locals: {friend: friend }
-    .friend-data
-      .friend-data__left
-        .friend-data__left__top
-          -if @friend.memo.blank?
-          -else
-            %p.memo
-              = simple_format(@friend.memo)
-        .friend-data__left__footer
-          =link_to "編集", edit_friend_path(@friend), class: "nav__menu__friend"
-          =link_to "ミッション作成", new_mission_path(:friend_id => @friend.id), class: "nav__menu__friend"
-          =link_to "閉じる", friends_path, class:"close-btn"
-      .friend-data__right
-        .friend-data__right__top
-          .friend-data__right__top__name
-            = @friend.name
-          .friend-data__right__top__sex
-            - if @friend.sex ==0
-              男性
-            - elsif @friend.sex ==1
-              女性
-            - else
-          .friend-data__right__top__birth
-            -if @friend.birth.blank?
+      .friend-data.box2.flexbox
+        .friend-data__left.box4
+          .friend-data__left__top
+            -if @friend.memo.blank?
             -else
-              = "誕生日: #{I18n.l(@friend.birth)}"
-          .friend-data__right__top__missions
-            - @friend.missions.each do |mission|
-              = link_to "#{mission.name}", mission_path(mission), class:"small"
-              = " | "
-        -if @friend.twitter.blank?
-        -else
-          %a.twitter-timeline{"data-chrome" => "nofooter", "data-height" => "350", "data-width" => "220", :href => "https://twitter.com/#{@friend.twitter}"}
-          %script{:async => "", :charset => "utf-8", :src => "//platform.twitter.com/widgets.js"}
+              =simple_format(@friend.memo, class:"memo")
+          .friend-data__left__footer
+            =link_to "編集", edit_friend_path(@friend), class: "nav__menu__friend"
+            =link_to "ミッション作成", new_mission_path(:friend_id => @friend.id), class: "nav__menu__friend"
+            =link_to "閉じる", friends_path, class:"close-btn"
+        .friend-data__right.box3
+          .friend-data__right__top
+            .friend-data__right__top__name
+              = @friend.name
+            .friend-data__right__top__sex
+              - if @friend.sex ==0
+                男性
+              - elsif @friend.sex ==1
+                女性
+              - else
+            .friend-data__right__top__birth
+              -if @friend.birth.blank?
+              -else
+                = "誕生日: #{I18n.l(@friend.birth)}"
+            .friend-data__right__top__missions
+              このフレンドのミッション:
+              .mobile-label-wrap
+                - @friend.missions.each do |mission|
+                  = link_to "#{mission.name}", mission_path(mission), class:"small"
+                  = " | "
+          -if @friend.twitter.blank?
+          -else
+            .twitter-data
+              %a.twitter-timeline{"data-chrome" => "nofooter", "data-height" => "350", "data-width" => "220", :href => "https://twitter.com/#{@friend.twitter}"}
+              %script{:async => "", :charset => "utf-8", :src => "//platform.twitter.com/widgets.js"}
+            =link_to "twitter: @#{@friend.twitter}", "https://twitter.com/#{@friend.twitter}", class:"mobile__twitter-data"
+          .mobile__friend-memo
+            メモ：
