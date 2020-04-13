@@ -19,6 +19,7 @@
   p.birth {
     display: inline;
     font-size: 13px;
+    margin: 10px;
   }
 }
 input#friend_name {
@@ -28,9 +29,6 @@ input#friend_name {
 }
 input#friend_twitter {
   padding-left: 5px;
-}
-p.birth {
-  margin: 10px;
 }
 select#friend_sex {
   margin: 0 0px 16px 30px;
