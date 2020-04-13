@@ -39,7 +39,7 @@
         - if user_signed_in?
           %ul.mobile
             =link_to "logo", root_path, class:"supulogo"
-            %li.mobile=link_to " もうすぐ誕生日のフレンド", "/", class:"mobile-menu fas fa-birthday-cake fa-lg"
+            %li.mobile=link_to " もうすぐ誕生日のフレンド", news_user_path(current_user.id), class:"mobile-menu fas fa-birthday-cake fa-lg"
             %li.mobile=link_to " フレンド一覧", friends_path, class: "mobile-menu fas fa-user-friends fa-lg" 
             %li.mobile=link_to " 新フレンド登録", new_friend_path, class: "mobile-menu fas fa-user-plus fa-lg"
             %li.mobile=link_to " ミッション一覧", missions_path, class: "mobile-menu fas fa-tasks fa-lg"

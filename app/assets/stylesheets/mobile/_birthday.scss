@@ -1,0 +1,31 @@
+.news__mobile {
+  &-title {
+    margin: 30px 0;
+    text-align: center;
+    font-size: 17px;
+    font-weight: bold;
+  }
+  margin: 10px;
+  min-height: 100px;
+}
+
+.news__top {
+  background: linear-gradient(transparent 50%, #fffd9a 100%);
+}
+.news__main {
+  margin: 5px;
+}
+.nav__menu__friend-birth {
+  text-align: center;
+  margin: 15px;
+}
+a.friend-to-back, input.addbtn {
+  margin: 0;
+  color: black;
+  background-color: white;
+  padding: 7px;
+  line-height: 30px;
+  border: black 1px solid;
+  border-radius: 5px;
+  width: 100px;
+}
