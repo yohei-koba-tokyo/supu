@@ -24,6 +24,9 @@
     }
     &__contents {
       &--left, &--right {
+        width: 100%;
+        padding: 5px;
+        text-align: left;
         font-weight: normal;
         box-sizing: border-box;
         .logbtn-new, input.logbtn-new {
@@ -42,6 +45,7 @@
           width: 80%;
         }
         .user-input-comment {
+          margin-top: 20px;
           width: 90%;
           height: 230px;
           line-height: 17px;
@@ -77,25 +81,8 @@
 }
 
 // インクリメンタルサーチ
-b {
-  display: none;
-}
 .chat-group-form {
-  // width: 90%;
-  // margin: 60px auto;
-  // padding: 40px;
-  // background-color: #fff;
-  // border: 1px solid #ddd;
-  // border-radius: 5px;
-  &__errors {
-    // margin: 30px 0;
-    // padding: 20px 40px;
-    // border: 1px solid #ddd;
-    // border-radius: 2px;
-    // text-align: center;
-  }
   &__label {
-
   }
   &__input {
     float: left;
@@ -160,4 +147,8 @@ b {
       color: #f05050;
     }
   }
+}
+
+.new-mission__title__contents--right {
+  text-align: center;
 }

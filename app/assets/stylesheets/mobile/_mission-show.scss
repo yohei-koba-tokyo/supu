@@ -5,7 +5,6 @@ p.contents__title, .mission-wrap {
   display: none;
 }
 
-
 .chatbox {
   width: 100%;
   height: calc(100vh - 70px);
@@ -15,8 +14,6 @@ p.contents__title, .mission-wrap {
     width: 100%;
     overflow-y: scroll;
     padding: 9px;
-
-
     &__mobile__edit-btn {
       position: fixed;
       right: 19px;
@@ -74,7 +71,7 @@ p.contents__title, .mission-wrap {
         width: 90%;/*右側に隙間を作る（閉じるカバーを表示）*/
         max-width: 270px;/*最大幅（調整してください）*/
         height: 100%;
-        background: rgba(255, 255, 255, 0.9);
+        background: white;
         transition: .3s ease-in-out;/*滑らかに表示*/
         -webkit-transform: translateX(-105%);
         transform: translateX(-105%);/*左に隠しておく*/
@@ -116,35 +113,25 @@ p.contents__title, .mission-wrap {
           text-align: center;
         }
         a.mobile-inner-mission-edit {
-
           border-radius: 5px;
           background-color: white;
           border: 1px solid;
           color: black;
           padding: 7px;
           margin: 10px;
-          
-
         }
-
       }
-      
       /*チェックが入ったらもろもろ表示*/
       #nav-input-2:checked ~ #nav-close-2 {
         display: block;/*カバーを表示*/
         opacity: .5;
       }
-      
       #nav-input-2:checked ~ #nav-content-2 {
         -webkit-transform: translateX(0%);
         transform: translateX(0%);/*中身を表示（右へスライド）*/
         box-shadow: 6px 0 25px rgba(0,0,0,.15);
       }
     }
-
-
-
-
     p.name {
       margin: 10px 0;
       font-size: 13px;
@@ -199,11 +186,6 @@ p.contents__title, .mission-wrap {
       border-bottom: 10px solid rgb(255, 238, 238);
       border-left: 10px solid transparent;
     }
-
-
-
-
-
   }
   &__form {
     background-color: rgba(255, 255, 255, 0.753);

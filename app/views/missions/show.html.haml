@@ -27,17 +27,14 @@
     .chatbox
       .chatbox__main
         .chatbox__main__mobile__edit-btn
-
           #nav-drawer-2
             %input#nav-input-2.nav-unshown-2{:type => "checkbox"}/
             %label#nav-open-2.fas.fa-file-alt.fa-lg{:for => "nav-input-2"}
               %span
             %label#nav-close-2.nav-unshown-2{:for => "nav-input-2"}
             #nav-content-2
-
               #nav-content-2__name
                 = "「#{@mission.name}」"
-              
               #nav-content-2__friend
                 = "サプライズの相手: #{@mission.friend.name}さん　"
 

@@ -33,10 +33,11 @@
               -else
                 = "誕生日: #{I18n.l(@friend.birth)}"
             .friend-data__right__top__missions
-              .mobile-label このフレンドのミッション:
-              - @friend.missions.each do |mission|
-                = link_to "#{mission.name}", mission_path(mission), class:"small"
-                = " | "
+              このフレンドのミッション:
+              .mobile-label-wrap
+                - @friend.missions.each do |mission|
+                  = link_to "#{mission.name}", mission_path(mission), class:"small"
+                  = " | "
           -if @friend.twitter.blank?
           -else
             .twitter-data
@@ -44,5 +45,4 @@
               %script{:async => "", :charset => "utf-8", :src => "//platform.twitter.com/widgets.js"}
             =link_to "twitter: @#{@friend.twitter}", "https://twitter.com/#{@friend.twitter}", class:"mobile__twitter-data"
           .mobile__friend-memo
-            %br
             メモ：

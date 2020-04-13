@@ -1,7 +1,7 @@
 
 .contents {
   margin: 10px;
-  height: 100vh;
+  height: calc(100vh - 70px);
   overflow-y: scroll;
   &__content {
     margin-top: -23px;
