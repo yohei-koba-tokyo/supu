@@ -35,17 +35,23 @@
             %label#nav-close-2.nav-unshown-2{:for => "nav-input-2"}
             #nav-content-2
 
-
-              = @mission.name
+              #nav-content-2__name
+                = "「#{@mission.name}」"
               
-              -@mission.users.each do |u|
-                ="#{u.nickname}"
+              #nav-content-2__friend
+                = "サプライズする相手: #{@mission.friend.name}さん　"
 
-              = @mission.friend.name
-
-              = simple_format(@mission.comment)
-
-
+              #nav-content-2__member
+                メンバー:
+                #nav-content-2__member-box
+                  -@mission.users.each do |u|
+                    ="#{u.nickname}　"
+              #nav-content-2__comment
+                ミッション内容：
+                #nav-content-2__comment-box 
+                  = simple_format(@mission.comment)
+              #nav-content-2__btn
+                =link_to  " ミッションを編集", edit_mission_path, class:"mobile-inner-mission-edit"
               .mobile-footer
                 =link_to new_user_session_path, class: "footer-btn" do
                   新規会員登録&ログイン

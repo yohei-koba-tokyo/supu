@@ -78,6 +78,56 @@ p.contents__title, .mission-wrap {
         transition: .3s ease-in-out;/*滑らかに表示*/
         -webkit-transform: translateX(-105%);
         transform: translateX(-105%);/*左に隠しておく*/
+        text-shadow: none;
+        &__name {
+          height:70px;
+          width: 100%;
+          text-align: center;
+          line-height: 70px;
+          font-weight: bold;
+          font-size: 19px;
+          background: linear-gradient(transparent 50%, #fffd9a9f 100%);
+        }
+        &__friend {
+          width: 100%;
+          height:15px;
+          text-align: right;
+          font-size: 14px;
+        }
+        &__member {
+          margin: 10px;
+          &-box {
+            width: 100%;
+            background-color: rgb(255, 247, 247);
+            font-size: 15px;
+          }
+        }
+        &__comment {
+          margin: 10px;
+          &-box {
+            width: 100%;
+            min-height: 200px; 
+            background-color: rgb(255, 247, 247);
+            padding: 5px;
+            font-size: 15px;
+          }
+        }
+        &__btn {
+          width: 100%;
+          text-align: center;
+        }
+        a.mobile-inner-mission-edit {
+
+          border-radius: 5px;
+          background-color: white;
+          border: 1px solid;
+          color: black;
+          padding: 7px;
+          margin: 10px;
+          
+
+        }
+
       }
       
       /*チェックが入ったらもろもろ表示*/
