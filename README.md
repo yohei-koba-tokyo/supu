@@ -206,3 +206,14 @@ Surprize Gift Maker "supu"  http://surprizegiftmaker.herokuapp.com/
 - belongs_to :mission
 - belongs_to :user
 - mount_uploader :image, ImageUploader
+
+
+## Reflection points　　-　反省点
+
+　　１．クラスの命名規則を、統一仕切れなかった →　**BEMを再度学習し改修する**
+
+　　２．レスポンシブを前提とした開発手順を踏めなかった →　**Webで出回っているテンプレート等を研究し、本来の意味でのレスポンシブなブロック管理をマスターする**
+
+　　３．sassのフォルダ構成が悪い →　**config, vendor, mixin, modules, overrideのフォルダ分けで整理出来るようにする**
+
+　　４．aタグやinputタグのデザイン統一がされていない →　**各パーツから構成を固め、全体を作成する手順を身につける**
