@@ -93,8 +93,6 @@ Surprize Gift Maker "supu"  http://surprizegiftmaker.herokuapp.com/
 
 　　７．チャット画面での非同期通信・自動更新機能を実装。
 
-　　８．パスワードを忘れた際の、メール通知機能を実装。
-
 ## Requirement　　-　要件
 
 　　１．恐れ入りますが、Chromeの最新版を利用してアクセスいただけると、不具合無くご覧いただけると思います。
