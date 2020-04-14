@@ -65,7 +65,7 @@ Surprize Gift Maker "supu"  http://surprizegiftmaker.herokuapp.com/
 
 ミッション作成時には、他のユーザーを検索してミッション共有することが出来ます！
 
-※インクリメンタルサーチ機能を実装しております。例として「洋平」「直子」などのユーザーが検索可能です。
+※インクリメンタルサーチ機能を実装しております。例として「洋平」「legro」「直子」などのユーザーが検索可能です。
 
 ![mission_new mov](https://user-images.githubusercontent.com/60637308/77840852-8cec9680-71c6-11ea-9392-7df43b9ee8fb.gif)
 
@@ -92,6 +92,8 @@ Surprize Gift Maker "supu"  http://surprizegiftmaker.herokuapp.com/
 　　６．RubocopとSiderの解析による自動コードレビュー実装。
 
 　　７．チャット画面での非同期通信・自動更新機能を実装。
+
+　　８．パスワードを忘れた際の、メール通知機能を実装。
 
 ## Requirement　　-　要件
 
