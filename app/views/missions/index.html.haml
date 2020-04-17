@@ -3,7 +3,7 @@
     - if user_signed_in?
       .contents
         %p.contents__title ミッション一覧
-        -if current_user.missions
+        -if current_user.missions.length == 0
           .newface__guidebox
             まだ、サプライズミッションが登録されていません
             .newface__guidebox__inner
