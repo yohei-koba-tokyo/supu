@@ -12,7 +12,7 @@ class FriendsController < ApplicationController
   def create
     @friend = Friend.new(friend_params)
     if @friend.save
-      @friend.update(day: @friend.birth.to_s.match(/..$/)[0])
+      @friend.update(day: @friend.birth.to_s.match(/..$/)[0]) if @friend.birth
       redirect_to friends_path
     else
       render 'new'
