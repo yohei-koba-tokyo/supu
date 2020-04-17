@@ -356,3 +356,35 @@ a.friendadd {
 .contents__guidemobile, .chatbox__main__mobile__edit-btn {
   display: none;
 }
+
+.newface__guidebox {
+  animation: fadeIn 2.5s ease 0s 1 normal;
+  text-align: center;
+  box-sizing: border-box;
+  margin: 20px 10px;
+  background-color: white;
+  font-size: 13px;
+  font-weight: bold;
+  color: red;
+  padding: 10px;
+  border-radius: 15px;
+  &__inner {
+    font-weight: normal;
+    text-align: left;
+    color: black;
+    margin: 10px 0;
+    font-size: 15px;
+    img.guide1 {
+      width: 95%;
+      border: yellow 2px solid;
+    }
+    img.guide2 {
+      display: none;
+    }
+  }
+  a#redcolor {
+    font-weight: bold;
+    color: red;
+    margin: -4px;
+  }
+}
