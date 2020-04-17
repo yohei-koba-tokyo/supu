@@ -170,3 +170,16 @@
 a.small {
   font-size: 11px;
 }
+
+.newface__guide {
+  animation: fadeIn 2.5s ease 0s 1 normal;
+  color: red;
+  font-size: 15px;
+  text-align: right;
+  margin-right: 28px; 
+  font-weight: bold;
+}
+@keyframes fadeIn {
+  0% {opacity: 0}
+  100% {opacity: 1}
+}

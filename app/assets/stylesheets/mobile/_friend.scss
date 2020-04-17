@@ -19,3 +19,16 @@ a.fas.fa-user-plus.fa-lg.friendadd {
     }
   }
 }
+
+.newface__guide {
+  animation: fadeIn 2.5s ease 0s 1 normal;
+  color: red;
+  font-size: 15px;
+  text-align: right;
+  margin-right: 9px; 
+  font-weight: bold;
+}
+@keyframes fadeIn { /*animetion-nameで設定した値を書く*/
+  0% {opacity: 0} /*アニメーション開始時は不透明度0%*/
+  100% {opacity: 1} /*アニメーション終了時は不透明度100%*/
+}
