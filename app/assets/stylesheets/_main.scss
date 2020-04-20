@@ -131,3 +131,20 @@ img.slide {
   width: 520px;
   height: 280px;
 }
+
+.actions-bottom {
+  text-align: center;
+  margin-top: 50px;
+}
+input.logbtn-easy {
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 5px;
+  appearance: none;
+  min-width: 40px;
+  line-height: 40px;
+  background-color: rgb(193, 248, 255);
+  border-radius: 10px;
+  box-shadow: silver 1px 1px 2px;
+}

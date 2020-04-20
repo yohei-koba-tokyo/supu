@@ -13,9 +13,10 @@
         =link_to new_mission_path, class: "fas fa-gift fa-lg" do
           .nav__menu
             = "新ミッション"
-        =link_to edit_user_registration_path, class: "fas fa-user-edit fa-lg" do
-          .nav__menu
-            = current_user.nickname
+        - unless current_user.email == "test@supu.com"
+          =link_to edit_user_registration_path, class: "fas fa-user-edit fa-lg" do
+            .nav__menu
+              = current_user.nickname
         =link_to destroy_user_session_path, method: :DELETE, class: "fas fa-moon fa-lg" do
           .nav__menu
             = "ログアウト"
@@ -44,8 +45,8 @@
             %li.mobile=link_to " 新フレンド登録", new_friend_path, class: "mobile-menu fas fa-user-plus fa-lg"
             %li.mobile=link_to " ミッション一覧", missions_path, class: "mobile-menu fas fa-tasks fa-lg"
             %li.mobile=link_to " 新ミッション作成", new_mission_path, class: "mobile-menu fas fa-gift fa-lg"
-            %li.mobile=link_to " #{current_user.nickname}さん : 登録内容の編集", edit_user_registration_path, class: "mobile-menu fas fa-user-edit fa-lg"
-          
+            - unless current_user.email == "test@supu.com"
+              %li.mobile=link_to " #{current_user.nickname}さん : 登録内容の編集", edit_user_registration_path, class: "mobile-menu fas fa-user-edit fa-lg"
             %li.mobile=link_to " ログアウト", destroy_user_session_path, method: :DELETE, class: "mobile-menu fas fa-moon fa-lg"
         - else
           %ul.mobile

@@ -1,0 +1,6 @@
+= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  .field
+    =f.hidden_field :email ,value: "test@supu.com"
+    =f.hidden_field :password ,value: "abcdefg"
+  .actions-bottom
+    = f.submit "テストユーザーでログインする", class:"logbtn-easy"
