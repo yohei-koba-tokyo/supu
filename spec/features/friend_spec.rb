@@ -11,7 +11,7 @@ feature 'friend', type: :feature do
     visit new_user_session_path
     fill_in 'user_email', with: user.email
     fill_in 'user_password', with: user.password
-    find('input[name="commit"]').click
+    find('input.logbtn').click
     expect(current_path).to eq root_path
     # フレンド一覧ページに移動
     click_link('フレンド一覧', match: :first)
