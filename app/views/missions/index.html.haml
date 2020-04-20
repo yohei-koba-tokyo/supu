@@ -6,13 +6,16 @@
         -if current_user.missions.length == 0
           .newface__guidebox
             まだ、サプライズミッションが登録されていません
+            %br
             .newface__guidebox__inner
-              ①まずは、フレンドを登録
-              <br>
+              %br
+              ①まずは、フレンドを登録しましょう！
+              %br
               　→フレンド登録は
               =link_to "コチラ", new_friend_path, id:"redcolor"
               から
             .newface__guidebox__inner
+              %br
               ②フレンドの登録が済んだら、フレンドを選んでサプライズミッションを計画しましょう！
             .newface__guidebox__inner
               %img.guide1{alt: "guide", src: "assets/newface1.jpg"}
