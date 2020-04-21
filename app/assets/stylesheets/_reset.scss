@@ -5,6 +5,7 @@
 html{
   color:#000;
   background:#FFF;
+  overflow: overlay;
 }
 /*
   TODO remove settings on BODY since we can't namespace it.
@@ -113,4 +114,8 @@ legend {
 }
 * {
   text-decoration: none;
+}
+
+div {
+  box-sizing: border-box;
 }

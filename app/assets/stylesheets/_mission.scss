@@ -7,6 +7,7 @@
   background-color: $syellow;
   padding:5px;
   overflow-y: scroll;
+  overflow: overlay;
   &__content {
     box-sizing: border-box;
     color: black;
@@ -58,7 +59,7 @@
   &__content:hover {
     background-color: white;
     transition: background-color 0.3s;
-    border-right: yellow 2px solid;
+    // border-right: yellow 2px solid;
   }
   a {
     color: black;
