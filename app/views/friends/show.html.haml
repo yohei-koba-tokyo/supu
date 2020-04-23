@@ -33,7 +33,8 @@
               -else
                 = "誕生日: #{I18n.l(@friend.birth)}"
             .friend-data__right__top__missions
-              このフレンドのミッション:
+              %p.mobile-label-have-mission
+                このフレンドのミッション:
               .mobile-label-wrap
                 - @friend.missions.each do |mission|
                   = link_to "#{mission.name}", mission_path(mission), class:"small"
