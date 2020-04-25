@@ -52,6 +52,6 @@ class MissionsController < ApplicationController
   private
 
   def mission_params
-    params.require(:mission).permit(:datetime, :name, :comment, :mission_type, :friend_id, user_ids: [])
+    params.require(:mission).permit(:datetime, :name, :comment, :mission_type, :admin_id, :friend_id, user_ids: [])
   end
 end
