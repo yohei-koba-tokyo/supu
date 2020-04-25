@@ -20,6 +20,7 @@ class MissionsController < ApplicationController
   def create
     @mission = Mission.new(mission_params)
     if @mission.save
+      @mission.update(admin_id: current_user.id)
       redirect_to root_path
     else
       @friends = Friend.select { |friend| friend.user_id == current_user.id }
@@ -40,6 +41,12 @@ class MissionsController < ApplicationController
     @friends = []
     @friends << Friend.find(@mission.friend_id)
     render :edit
+  end
+
+  def destroy
+    mission = Mission.find(params[:id])
+    mission.destroy
+    redirect_to root_path
   end
 
   private
