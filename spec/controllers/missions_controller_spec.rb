@@ -47,6 +47,14 @@ describe MissionsController do
         expect(response).to redirect_to new_user_session_path
       end
     end
+
+    describe 'DELETE #destroy' do
+      let!(:mission) { create(:mission) }
+      it "" do
+        delete :destroy, params: { id: mission.id }
+        expect(response).to redirect_to new_user_session_path
+      end
+    end
   end
 
   context "when sign in" do
@@ -131,6 +139,14 @@ describe MissionsController do
         patch :update, params: { id: mission.id, mission: mission_params }
         mission.reload
         expect(response).to render_template :edit
+      end
+    end
+    describe 'DELETE #destroy' do
+      let!(:mission) { create(:mission) }
+      it "is expected to change `Mission.count` by -1" do
+        expect do
+          delete :destroy, params: { id: mission.id }
+        end.to change(Mission, :count).by(-1)
       end
     end
   end
