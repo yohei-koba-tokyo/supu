@@ -47,8 +47,9 @@
                 ミッション内容：
                 #nav-content-2__comment-box 
                   = simple_format(@mission.comment)
-              #nav-content-2__btn
-                =link_to  " ミッションを編集", edit_mission_path, class:"mobile-inner-mission-edit"
+              - if @mission.admin_id == current_user.id
+                #nav-content-2__btn
+                  =link_to  " ミッションを編集", edit_mission_path, class:"mobile-inner-mission-edit"
               .mobile-footer
                 =link_to new_user_session_path, class: "footer-btn" do
                   新規会員登録&ログイン
@@ -70,6 +71,7 @@
             = f.label :image, class: 'form__mask__image' do
               = icon('fas', 'image', class: 'icon')
               = f.file_field :image, class: 'hidden'
-          = f.submit 'Send', class: 'form__submit'          
-        .chatbox__form__editbtn
-          =link_to  " ミッション編集", edit_mission_path, class:"mission-edit"
+          = f.submit 'Send', class: 'form__submit'
+        - if @mission.admin_id == current_user.id
+          .chatbox__form__editbtn
+            =link_to  " ミッション編集", edit_mission_path, class:"mission-edit"

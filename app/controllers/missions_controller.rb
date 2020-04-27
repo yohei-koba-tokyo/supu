@@ -45,8 +45,11 @@ class MissionsController < ApplicationController
 
   def destroy
     mission = Mission.find(params[:id])
-    mission.destroy
-    redirect_to root_path
+    if mission.destroy
+      redirect_to root_path
+    else
+      render :edit
+    end
   end
 
   private
