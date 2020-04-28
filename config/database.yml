@@ -13,6 +13,13 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+
+  # 以下三行はdocker記述
+  # username: <%= ENV.fetch('MYSQL_USER') { 'root' } %>
+  # password: <%= ENV.fetch('MYSQL_PASSWORD') { 'root' } %>
+  # host: db
+
   username: root
   password:
   socket: /tmp/mysql.sock
