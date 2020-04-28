@@ -1,0 +1,33 @@
+version: '2'
+services:
+  db:
+    image: mysql:5.6
+    environment:
+      - ./environments/db.env
+    volumes:
+      - mysql-data:/var/lib/mysql
+    ports:
+      - "4306:3306"
+
+  app:
+    build: .
+    command: bundle exec puma -C config/puma.rb
+    volumes:
+      - .:/myproject
+      - public-data:/myproject/public
+      - tmp-data:/myproject/tmp
+      - log-data:/myproject/log
+
+  web:
+    build:
+      context: containers/nginx
+    volumes:
+      - public-data:/myproject/public
+      - tmp-data:/myproject/tmp
+    ports:
+      - 80:80
+volumes:
+  mysql-data:
+  public-data:
+  tmp-data:
+  log-data:
