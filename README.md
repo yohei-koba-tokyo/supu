@@ -129,7 +129,7 @@ Surprize Gift Maker "supu"  http://surprizegiftmaker.herokuapp.com/
 
 ## DB creation　　-　データベース設計
 
-![dber](https://user-images.githubusercontent.com/60637308/77844020-96352d80-71dd-11ea-9429-482bc2b59edf.jpg)
+![er_0429](https://user-images.githubusercontent.com/60637308/80553940-986df000-8a06-11ea-89b4-305e759ef50e.jpg)
 
 
 ### user テーブル
@@ -167,6 +167,7 @@ Surprize Gift Maker "supu"  http://surprizegiftmaker.herokuapp.com/
 |comment|text||
 |mission_type|integer||
 |friend|integer|foreign_key: true|
+|admin|integer||
 
 ##### Association
 - has_many :mission_users, dependent: :destroy
@@ -186,6 +187,7 @@ Surprize Gift Maker "supu"  http://surprizegiftmaker.herokuapp.com/
 |birth|date||
 |twitter|string||
 |memo|text||
+|day|integer||
 
 ##### Association
 - belongs_to :user
