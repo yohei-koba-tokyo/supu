@@ -16,13 +16,15 @@ default: &default
 
 
   # 以下三行はdocker記述
-  # username: <%= ENV.fetch('MYSQL_USER') { 'root' } %>
-  # password: <%= ENV.fetch('MYSQL_PASSWORD') { 'root' } %>
-  # host: db
-
   username: root
-  password:
-  socket: /tmp/mysql.sock
+  password: password
+  host: db
+
+
+  # 以下３行はdocker前の記述
+  # username: root
+  # password:
+  # socket: /tmp/mysql.sock
 
 development:
   <<: *default
