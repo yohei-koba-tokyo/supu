@@ -9,6 +9,8 @@
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
+    %link{:href => "assets/fabicon.ico", :rel => "shortcut icon", :type => "logo.icon"}/
+    %link{:href => "assets/fabicon.ico", :rel => "icon", :type => "logo.icon"}/
   %body
     .wrapper
       = render 'layouts/header'
